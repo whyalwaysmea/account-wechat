@@ -26,8 +26,8 @@ Page({
             // 所以此处加入 callback 以防止这种情况
             app.userInfoReadyCallback = res => {
                 this.setData({
-                userInfo: res.userInfo,
-                hasUserInfo: true
+                    userInfo: res.userInfo,
+                    hasUserInfo: true
                 })
             }
         } else {
@@ -41,14 +41,6 @@ Page({
                 })
                 }
             })
-        }
+        }        
     },
-    getUserInfo: function(e) {
-        console.log(e)
-        app.globalData.userInfo = e.detail.userInfo
-        this.setData({
-        userInfo: e.detail.userInfo,
-        hasUserInfo: true
-        })
-    }
 })
