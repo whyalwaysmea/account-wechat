@@ -3,23 +3,27 @@
     text-align: center;
     width: 100%;
     height: 80rpx;
+    padding-top: 36rpx;
 }
 
 .header-icon {
     width: 48rpx;
     height: 48rpx;
+    margin-top: 8rpx;
 }
 
 .icon-statistics {    
-    margin-top: 36rpx;    
     margin-right: 24rpx;
     float: right;
 }
 
 .icon-my {
     float: right;
-    margin-top: 36rpx;
     margin-right: 24rpx;
+}
+
+.avatars-layout {
+    margin-left: 36rpx;
 }
 
 .avatars-account {
@@ -28,11 +32,107 @@
     border-radius: 32rpx;
     float: left;
     background-color: #fff;
+    border: 1px solid #d1d1d1;
+}
+
+.icon-setting {
+    float: left;
+    margin-left: 24rpx;
 }
 
 /* 简单统计 */
 .statistics-layout {
-    margin: 24rpx;
-    border: 1px solid #d1d1d1;
+    padding: 12rpx;
     height: 100rpx;
+    display: flex;
+}
+
+.statistics-pannel {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 16px;
+}
+
+.statistics-pannel text {
+    display: block;
+}
+
+.statistics-title {
+    font-size: 12px;
+    padding-bottom: 12rpx;
+    color: #8f8f8f;
+}
+
+/* 记录列表 */
+.record-item {   
+    margin: 15px 0;
+    background-color: #fff;
+    padding: 15rpx;
+    padding-bottom: 0px;
+}
+
+.day-record {
+    height: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.day-date {
+    float: left;
+    font-size: 12px;
+    color: #8f8f8f;
+}
+
+.day-output-layout,
+.day-input-layout {
+    font-size: 12px;
+    float: right;
+    color: #8f8f8f;
+    margin-left: 24rpx;
+}
+
+.day-input {
+    color: #39ce39;
+}
+
+.day-output {
+    color: #da4040;
+}
+
+.rocord-content {
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.record-avatars {
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 32rpx;
+    margin-top: 8px;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+}
+
+.record-title {
+    margin-left: 14px;
+    font-size: 16px;
+}
+
+.record-money {
+    float: right;
+    margin-right: 14px;
+}
+
+/* 记一笔 */
+.btn_record {
+    width: 70%;
+    margin: 0 15%;
+    background-color: #fff;
+    border: 1px solid #f00;
+    border-radius: 15rpx;
+    text-align: center;
+    color: #f00;
+    position: absolute;
+    bottom: 40px;
 }

@@ -2,16 +2,60 @@
 <view class="container">
     <!-- 头部 -->
     <view class="header-layout">        
-        <image src="../../images/icon_my_selected.png" class="icon-my header-icon"></image>
-        <image src="../../images/icon_statistics_selected.png" class="icon-statistics header-icon"></image>
+        <image src="../../images/icon_my.png" class="icon-my header-icon"></image>
+        <image src="../../images/icon_statistics.png" class="icon-statistics header-icon"></image>
+        <image src="../../images/icon_calendar.png" class="icon-statistics header-icon"></image>
         <view class="avatars-layout">
-
+            <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account"></image>
+            <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account"></image>
         </view>
-        <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account"></image>
+        <image src="../../images/icon_add_person.png" class="icon-setting header-icon"></image>
     </view>
 
     <!-- 简单统计 -->
     <view class="statistics-layout">
+        <view class="statistics-pannel">
+            <text class="statistics-title">本月支出</text>
+            <text class="statistics-money">998</text>
+        </view>
+        <view class="statistics-pannel">
+            <text class="statistics-title">本月支出</text>
+            <text class="statistics-money">998</text>
+        </view>
+        <view class="statistics-pannel">
+            <text class="statistics-title">本月支出</text>
+            <text class="statistics-money">998</text>
+        </view>
+    </view>
+
+
+    <!-- 记录列表 -->
+    <view class="reocrd-list">
+        <view class="record-item">
+            <view class="day-record">
+                <text class="day-date">2018年5月28日</text>                
+                <view class="day-output-layout">
+                    <text>支出：</text>
+                    <text class="day-output">123</text>
+                </view>                
+
+                <view class="day-input-layout">
+                    <text>收入：</text>
+                    <text class="day-input">123</text>
+                </view>
+            </view>
+
+            <view class="rocord-content">
+                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="record-avatars"></image>
+                <text class="record-title">吃饭（早饭）</text>
+                <text class="record-money day-output">12.00</text>
+            </view>
+        </view>
+
 
     </view>
+
+
+    <!-- 记一笔 -->
+    <button class="btn_record">记一笔</button>
 </view>
