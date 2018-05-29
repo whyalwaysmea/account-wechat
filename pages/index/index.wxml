@@ -9,7 +9,7 @@
             <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account"></image>
             <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account"></image>
         </view>
-        <image src="../../images/icon_add_person.png" class="icon-setting header-icon"></image>
+        <image src="../../images/icon_calendar.png" class="icon-setting header-icon"></image>
     </view>
 
     <!-- 简单统计 -->

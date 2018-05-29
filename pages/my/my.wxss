@@ -1,1 +1,60 @@
 /* pages/my/my.wxss */
+/* 用户信息 */
+.header {
+    text-align: center;
+    padding: 10px;
+}
+
+.user_name {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+    display:block;
+}
+
+.user_avatar {
+    height: 88px;
+    width: 88px;
+    border-radius: 44px;
+    border: 1px solid #e1e1e1;
+    background-color: #fff;
+}
+
+/* 统计数据 */
+.statistic-layout {
+    margin-left: 4%;
+    border: 1px solid #bfbfbf;
+    display: flex;
+    padding: 7px;
+    width: 88%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.statistic-pannel {
+    flex-grow: 1;    
+    font-size: 12px;
+    color: #888888;
+}
+
+.middle-pannel {
+    border-left: 1px solid #bfbfbf;
+    border-right: 1px solid #bfbfbf;
+}
+
+.statistic-title {        
+    display: block;
+    margin-bottom: 5px;
+}
+
+.statistic-num {
+    font-size: 16px;
+    color: #000;
+    margin-right: 3px;
+}
+
+/* 菜单 */
+.weui-cell__bd {
+    color: #888888;
+    font-size: 14px;
+}
