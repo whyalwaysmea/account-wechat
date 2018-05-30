@@ -6,8 +6,8 @@
         <image src="../../images/icon_statistics.png" class="icon-statistics header-icon"></image>
         <image src="../../images/icon_calendar.png" class="icon-statistics header-icon"></image>
         <view class="avatars-layout">
-            <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account"></image>
-            <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account"></image>
+            <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" style="z-index: 999;"></image>
+            <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" style="margin-left: -12px; z-index: 998;"></image>
         </view>
         <image src="../../images/icon_calendar.png" class="icon-setting header-icon"></image>
     </view>

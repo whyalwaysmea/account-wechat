@@ -1,0 +1,20 @@
+<!--pages/books/books.wxml-->
+<view class="container">
+
+    <view class="book-layout">
+        <view class="book-item">
+            <view class="avatar-pannel">
+                <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3468481793,3455309356&fm=27&gp=0.jpg" class="user_avatar" style="z-index: 999;"></image>
+                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4" class="user_avatar" style="margin-left: -20px; z-index: 998;"></image>
+                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4" class="user_avatar" style="margin-left: -20px; z-index: 997;"></image>
+            </view>
+            <view class="book-info">
+                <text class="book-name">Something的账本</text>
+                <text class="last-time">上次记账时间：2018年5月30日20:42:59</text>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+    </view>
+
+    
+</view>    

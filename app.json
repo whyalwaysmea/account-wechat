@@ -1,14 +1,16 @@
 {
-    "pages": [
-        "pages/my/my",
-        "pages/index/index",                       
-        "pages/account/account",
-        "pages/statistics/statistics"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "black"
-    }
+  "pages": [
+    "pages/book_setting/book_setting",
+    "pages/books/books",
+    "pages/my/my",
+    "pages/index/index",
+    "pages/account/account",
+    "pages/statistics/statistics"    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
 }

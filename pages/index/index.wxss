@@ -27,13 +27,15 @@
 }
 
 .avatars-account {
-    width: 64rpx;
-    height: 64rpx;
-    border-radius: 32rpx;
+    width: 54rpx;
+    height: 54rpx;
+    border-radius: 27rpx;
     float: left;
     background-color: #fff;
     border: 1px solid #d1d1d1;
+    position: relative;
 }
+
 
 .icon-setting {
     float: left;
