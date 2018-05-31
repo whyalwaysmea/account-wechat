@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/account/account",
     "pages/book_setting/book_setting",
     "pages/books/books",
     "pages/my/my",
-    "pages/index/index",
-    "pages/account/account",
+    "pages/index/index",    
     "pages/statistics/statistics"    
   ],
   "window": {

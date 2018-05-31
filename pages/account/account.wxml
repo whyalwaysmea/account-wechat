@@ -1,2 +1,89 @@
 <!--pages/account/account.wxml-->
-<text>pages/account/account.wxml</text>
+<view class="container">
+    <view class="type-table">
+        <text class="income-type ">收入</text>
+        <text class="output-type selected">支出</text>
+    </view>
+    <view class="input-layout">
+        <view class="input-icon-pannel">
+            <image src="../../images/output/icon_child_selected.png" class="input-icon"></image>
+        </view>
+        
+        <text class="input-name">孩子</text>
+        
+        <text class="input-money">123</text>
+        <text class="input-money calculation">564+48+521=</text>
+    </view>
+    <view class="classify-layout">
+        <view class="classify-item">
+            <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+            <text class="classify-name">餐饮</text>
+        </view>
+        <view class="classify-item">
+                <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                <text class="classify-name">餐饮</text>
+            </view>
+            <view class="classify-item">
+                    <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                    <text class="classify-name">餐饮</text>
+                </view>
+                <view class="classify-item">
+                        <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                        <text class="classify-name">餐饮</text>
+                    </view>
+                    <view class="classify-item">
+                            <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                            <text class="classify-name">餐饮</text>
+                        </view>
+                        <view class="classify-item">
+                                <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                <text class="classify-name">餐饮</text>
+                            </view>
+                            <view class="classify-item">
+                                    <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                    <text class="classify-name">餐饮</text>
+                                </view>
+                                <view class="classify-item">
+                                        <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                        <text class="classify-name">餐饮</text>
+                                    </view>
+                                    <view class="classify-item">
+                                            <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                            <text class="classify-name">餐饮</text>
+                                        </view>
+                                        <view class="classify-item">
+                                                <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                                <text class="classify-name">餐饮</text>
+                                            </view>
+    </view>
+    <view class="footer-layout">
+        <view class="tag-layout">
+            <view>标签</view>
+            <text>午餐</text>
+        </view>
+        <view class="keybord-layout">
+            <view class="keybord-item">7</view>
+            <view class="keybord-item">8</view>
+            <view class="keybord-item">9</view>
+            <view class="keybord-item">
+                <image src="../../images/icon_back.png"  style="width: 22px; height: 22px;"/>          
+            </view>              
+    
+            <view class="keybord-item">4</view>
+            <view class="keybord-item">5</view>
+            <view class="keybord-item">6</view>
+            <view class="keybord-item">-</view>
+    
+            <view class="keybord-item">1</view>
+            <view class="keybord-item">2</view>
+            <view class="keybord-item">3</view>
+            <view class="keybord-item">+</view>
+    
+            <view class="keybord-item">.</view>
+            <view class="keybord-item">0</view>
+            <view class="keybord-item">删除</view>
+            <view class="keybord-item">完成</view>
+        </view>
+    </view>
+    
+</view>    

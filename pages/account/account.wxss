@@ -1,1 +1,127 @@
 /* pages/account/account.wxss */
+/* 收入/支出 */
+.type-table {
+    display: flex;
+    margin: 10px  30%;
+    text-align:center;
+    font-size:14px;
+    height:24px;
+    line-height:24px;
+    padding-top:10px;
+}
+
+.income-type {
+    flex-grow: 1;
+    border: 1px solid #e1e1e1;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.selected {
+    background-color: #bfbfbf;
+    color: #fff;
+}
+
+.output-type {
+    flex-grow: 1;    
+    border: 1px solid #e1e1e1;
+    border-left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* 金额 */
+.input-layout {
+    background-color: #FFF;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 15px;
+    position: relative;
+}
+
+.input-icon-pannel {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    margin-top: 10px; 
+    float: left;
+    text-align: center;
+    background-color:#99DAF6;
+}
+
+.input-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;   
+    margin-bottom:3px;
+}
+
+.input-name {
+    margin-left: 10px;
+    color: #333;
+    font-size: 14px;
+}
+
+.calculation,
+.input-money {
+    color: #000;
+    float: right;
+    font-size:28px;
+}
+
+.calculation {
+    font-size: 12px;
+    color: #555;
+}
+
+/* 收支类别 */
+.classify-layout {
+    border-top:1rpx solid #d9d9d9;
+    overflow:hidden;
+}
+
+.classify-item {
+    position:relative;
+    float:left;
+    padding:10px 10px;
+    width:20%;
+    box-sizing:border-box;
+}
+
+.classify-icon {
+    display:block;
+    width:28px;
+    height:28px;
+    margin:0 auto;
+}
+
+.classify-name {
+    margin-top:5px;
+    display:block;
+    text-align:center;
+    color:#555;
+    font-size:12px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+
+/* 键盘 */
+.footer-layout {
+    position: absolute;
+    bottom: 0px;
+}
+
+.keybord-layout {
+    overflow:hidden;    
+}
+
+.keybord-item {
+    position:relative;
+    float:left;
+    padding:10px 10px;
+    width:25%;
+    box-sizing:border-box;
+    border: 0.1px solid #d9d9d9;
+    text-align: center;
+}
