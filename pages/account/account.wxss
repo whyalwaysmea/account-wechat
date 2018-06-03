@@ -125,3 +125,38 @@
     border: 0.1px solid #d9d9d9;
     text-align: center;
 }
+
+/* 标签 */
+.tag-layout {
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    font-size: 12px;
+    padding: 2px 5px;
+    background-color: #fff;
+    height: 30px;
+    line-height: 30px;
+}
+
+.tag {
+    float: left;
+    border-right: 1px solid #bfbfbf;
+    padding-right: 7px;
+    margin-right: 5px;
+}
+
+.tag-list {
+    margin-left: 3px;
+    width: auto;
+    overflow:hidden;
+}
+
+.tag-item {
+    color: #555;
+    border: 1px solid #bfbfbf;
+    margin: 0 3px;
+    border-radius: 6px;
+    padding: 1px 7px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 3px;
+}

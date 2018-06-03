@@ -58,8 +58,16 @@
     </view>
     <view class="footer-layout">
         <view class="tag-layout">
-            <view>标签</view>
-            <text>午餐</text>
+            <view class="tag">#标签#</view>
+            <scroll-view class="tag-list" scroll-x >
+                <text class="tag-item">午餐</text>
+                <text class="tag-item">午餐</text>
+                <text class="tag-item">午餐</text>
+                <text class="tag-item">午餐</text>
+                <text class="tag-item">午餐</text>
+                <text class="tag-item">午餐</text>
+                <text class="tag-item">午餐</text>
+            </scroll-view>
         </view>
         <view class="keybord-layout">
             <view class="keybord-item">7</view>
