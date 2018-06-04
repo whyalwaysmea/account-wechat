@@ -14,7 +14,7 @@
         <text class="input-money">123</text>
         <text class="input-money calculation">564+48+521=</text>
     </view>
-    <view class="classify-layout">
+    <scroll-view class="classify-layout" scroll-y style="height: 150px;">
         <view class="classify-item">
             <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
             <text class="classify-name">餐饮</text>
@@ -55,19 +55,74 @@
                                                 <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
                                                 <text class="classify-name">餐饮</text>
                                             </view>
-    </view>
+                                            <view class="classify-item">
+                                                    <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                                    <text class="classify-name">餐饮</text>
+                                                </view>
+                                                <view class="classify-item">
+                                                        <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                                        <text class="classify-name">餐饮</text>
+                                                    </view>
+                                                    <view class="classify-item">
+                                                            <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                                            <text class="classify-name">餐饮</text>
+                                                        </view>
+                                                        <view class="classify-item">
+                                                                <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                                                <text class="classify-name">餐饮</text>
+                                                            </view>
+                                                            <view class="classify-item">
+                                                                    <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                                                    <text class="classify-name">餐饮</text>
+                                                                </view>
+                                                                <view class="classify-item">
+                                                                        <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                                                        <text class="classify-name">餐饮</text>
+                                                                    </view>
+                                                                    <view class="classify-item">
+                                                                            <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                                                            <text class="classify-name">餐饮</text>
+                                                                        </view>
+                                                                        <view class="classify-item">
+                                                                                <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
+                                                                                <text class="classify-name">餐饮</text>
+                                                                            </view>
+    </scroll-view>
+
+
     <view class="footer-layout">
         <view class="tag-layout">
-            <view class="tag">#标签#</view>
-            <scroll-view class="tag-list" scroll-x >
-                <text class="tag-item">午餐</text>
-                <text class="tag-item">午餐</text>
-                <text class="tag-item">午餐</text>
-                <text class="tag-item">午餐</text>
-                <text class="tag-item">午餐</text>
-                <text class="tag-item">午餐</text>
-                <text class="tag-item">午餐</text>
+            <view class="tag">#备注#</view>
+            <scroll-view class="tag-list" scroll-x="true" >
+                <text class="tag-item">午餐1</text>
+                <text class="tag-item">午餐2</text>
+                <text class="tag-item">午餐3</text>
+                <text class="tag-item">午餐4</text>
+                <text class="tag-item">午餐5</text>
+                <text class="tag-item">午餐6</text>
+                <text class="tag-item">午餐7</text>
+                <text class="tag-item">午餐8</text>
+                <text class="tag-item">午餐9</text>
+                <text class="tag-item">午餐ba</text>
+                <text class="tag-item">午餐b</text>
             </scroll-view>
+            <image src="../../images/icon_edit.png" class="icon_remarks"/>
+        </view>
+        <view class="info-layout">
+            <text class="date">6月4日</text>
+            <text class="way">微信支付</text>           
+            <scroll-view class="person-layout" scroll-x="true">
+                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
+                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account"></image>
+                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
+                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
+                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
+                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
+                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
+                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
+                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
+            </scroll-view>    
+            <image src="../../images/icon_aacount_add_parter.png" class="account_add_person" />         
         </view>
         <view class="keybord-layout">
             <view class="keybord-item">7</view>

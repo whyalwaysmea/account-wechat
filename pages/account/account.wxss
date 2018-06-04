@@ -2,7 +2,8 @@
 /* 收入/支出 */
 .type-table {
     display: flex;
-    margin: 10px  30%;
+    margin: 0px  30%;
+    margin-bottom: 10px;
     text-align:center;
     font-size:14px;
     height:24px;
@@ -110,10 +111,14 @@
 .footer-layout {
     position: absolute;
     bottom: 0px;
+    width: 100%;    
+    background-color: #fff;
 }
 
 .keybord-layout {
-    overflow:hidden;    
+    width: 100%;
+    border-top: 1px solid #d9d9d9;
+    
 }
 
 .keybord-item {
@@ -122,7 +127,6 @@
     padding:10px 10px;
     width:25%;
     box-sizing:border-box;
-    border: 0.1px solid #d9d9d9;
     text-align: center;
 }
 
@@ -142,12 +146,14 @@
     border-right: 1px solid #bfbfbf;
     padding-right: 7px;
     margin-right: 5px;
+    width: 100rpx;
 }
 
 .tag-list {
     margin-left: 3px;
-    width: auto;
-    overflow:hidden;
+    white-space: nowrap;
+    width: 500rpx;
+    float: left;
 }
 
 .tag-item {
@@ -159,4 +165,64 @@
     height: 20px;
     line-height: 20px;
     margin-top: 3px;
+    display: inline-block;
+}
+
+.icon_remarks {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+/* 更多信息 */
+.info-layout {
+    font-size: 12px;
+    padding: 2px 5px;
+    background-color: #fff;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+}
+
+.way,
+.date {
+    color: #555;
+    border: 1px solid #bfbfbf;
+    margin: 0 3px;
+    border-radius: 6px;
+    padding: 1px 7px;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    margin-top: 2px;
+}
+
+
+
+.person-layout {
+    height: 30px;
+    display: inline;
+    padding-left: 10px;
+    white-space: nowrap;
+    width: 300rpx;
+}
+
+.avatars-account {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    border-radius: 11px;
+    border: 1px solid #e1e1e1;
+    margin-right: 3px;
+    display: inline-block;
+}
+
+.account_add_person {
+    width:18px;
+    height:18px;
+    position:absolute;
+    right:10px;
+    margin-top:3px;
 }
