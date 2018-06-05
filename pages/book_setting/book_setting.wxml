@@ -1,5 +1,6 @@
 <!--pages/book_setting/book_setting.wxml-->
 <view class="container">
+
     <view class="header-layout">
         <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3468481793,3455309356&fm=27&gp=0.jpg" class="user_avatar" ></image>
         <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4" class="user_avatar" ></image>
