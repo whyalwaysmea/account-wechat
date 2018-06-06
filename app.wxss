@@ -7,3 +7,35 @@
     height: 100vh;
     background-color: #fafafa;
 } 
+
+
+.dialog-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(5, 5, 5, 0.2);
+    top: 0px;
+}
+
+.dialog {
+    width: 70%;
+    margin: 0 10%;
+    padding: 5%;
+    background-color: #fff;
+    border-radius:4px;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    border: 1px solid #d1d1d1;
+}
+
+.dialog-title {
+    position: absolute;
+    left: 20px;
+    font-size: 12px;
+    color: #555;    
+}
+
+.edit_input {
+    margin-top: 30px;
+}

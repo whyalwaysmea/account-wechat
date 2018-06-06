@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    editName: false
   },
 
   /**
@@ -62,5 +62,21 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  /**
+   * 修改名字
+   */
+  editName: function() {
+    this.setData({
+        editName: true
+    })
+  },
+
+  changeName: function() {
+    this.setData({
+        editName: false
+    })
+    
   }
 })
