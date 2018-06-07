@@ -1,0 +1,10 @@
+<!--pages/edit_name/edit_name.wxml-->
+<view class="container"> 
+    <view class="input-layout">
+        <input class="edit-name" placeholder="{{name}}" bindinput="bindKeyInput"  value="{{name}}"/>
+        <image src="../../images/icon_delete_input.png" class="icon_del" bindtap="clear"/>
+    </view>
+
+    <button class="weui-btn btn-save" type="primary" bindtap="save">保存</button>            
+
+</view>    

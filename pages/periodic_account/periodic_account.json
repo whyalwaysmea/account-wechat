@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "周期帐",
+    "usingComponents": {
+        "zan-cell": "../../style/cell/index"
+    }
+}

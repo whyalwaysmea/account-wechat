@@ -1,0 +1,9 @@
+/* pages/periodic_account/periodic_account.wxss */
+.add-btn {
+    position: fixed;
+    bottom: 30px;
+    height: 36px;
+    line-height: 36px;
+    width: 80%;
+    margin-left: 10%;
+}

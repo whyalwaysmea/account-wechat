@@ -1,0 +1,6 @@
+<!--pages/periodic_account/periodic_account.wxml-->
+<view class="container">    
+    <zan-cell title="单行列表" label="附加描述" value="详细信息" is-link></zan-cell>
+
+    <button class="weui-btn add-btn" type="primary" bindtap="addPeriodic">新增</button> 
+</view>>    

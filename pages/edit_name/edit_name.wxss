@@ -1,0 +1,38 @@
+/* pages/edit_name/edit_name.wxss */
+.container {
+    padding-top: 10px;
+}
+.input-layout {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 30px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #FFF;
+    border-radius: 5px;
+    position: relative;
+    padding: 5px 10px;
+}
+
+.edit-name {
+    width: 70%;
+    margin: 5px;
+    height: 36px;
+    line-height: 36px;
+}
+
+.icon_del {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 8px;
+    top: 15px;
+}
+
+.btn-save {
+    width: 90%;
+    margin: 10% 5%;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+}

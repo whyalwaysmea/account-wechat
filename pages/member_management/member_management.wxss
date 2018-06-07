@@ -1,0 +1,47 @@
+/* pages/member_management/member_management.wxss */
+.member-layout {
+    margin-bottom: 100px;
+}
+.member-item {
+    background-color: #FFF;
+    height: 50px;
+    border-top: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    position: relative;
+}
+
+.avatars-account {
+    float: left;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    margin: 7px;
+}
+
+.member-name {
+    float: left;
+    margin-top: 3px;
+}
+
+.member-statistics {
+    font-size: 12px;
+    color: #555;
+    position: absolute;
+    top: 28px;
+    left: 50px;
+}
+
+.weui-cell__ft_in-access {    
+    position: absolute;
+    top:24px;
+    right:10px;
+}    
+
+.add-btn {
+    position: fixed;
+    bottom: 30px;
+    height: 36px;
+    line-height: 36px;
+    width: 80%;
+    margin-left: 10%;
+}

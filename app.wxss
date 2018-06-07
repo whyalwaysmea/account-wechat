@@ -5,7 +5,7 @@
     height: 100%;   
     box-sizing: border-box;
     height: 100vh;
-    background-color: #fafafa;
+    background-color: #F1F5F6;
 } 
 
 
