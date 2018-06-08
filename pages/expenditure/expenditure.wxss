@@ -1,0 +1,43 @@
+/* pages/expenditure/expenditure.wxss */
+.container {
+    display: flex;
+}
+
+.main-layout {
+    flex-grow: 2;
+    border-right: 1px solid #d1d1d1;
+    text-align: left;
+}
+
+.secondary-layout {
+    flex-grow: 3;
+    text-align: left;
+}
+
+.secondary-item,
+.item {
+    background-color: #FFF;
+    border-bottom: 1px solid #d1d1d1;    
+    width: 100%;
+    display: block;
+    padding: 5px 0;
+    position: relative;
+}
+
+.secondary-item {
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.main-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    padding-left: 10px;
+}
+
+.weui-cell__ft_in-access {
+    position: absolute;
+    top: 15px;
+    right: 21px;
+}

@@ -1,0 +1,37 @@
+<!--pages/expenditure/expenditure.wxml-->
+<view class="container">
+    <view class="main-layout">
+        <view class="item">
+            <image src="../../images/output/icon_clothes_unselected.png" class="main-icon"></image>
+            <text>吃</text>
+        </view>
+        <view class="item">
+            <image src="../../images/output/icon_clothes_unselected.png" class="main-icon"></image>
+            <text>吃</text>
+        </view>
+        <view class="item">
+            <image src="../../images/output/icon_clothes_unselected.png" class="main-icon"></image>
+            <text>吃</text>
+        </view>
+        <view class="item">
+            <image src="../../images/output/icon_clothes_unselected.png" class="main-icon"></image>
+            <text>吃</text>
+        </view>
+        <view class="item">
+            <image src="../../images/icon_add_person.png" class="main-icon"></image>
+        </view>
+    </view>
+
+    <view class="secondary-layout">        
+        <view class="secondary-item">
+            <text >乐</text>
+            <view class="weui-cell__ft_in-access"></view>
+        </view>
+
+        
+        <view class="secondary-item"> 
+            <image src="../../images/icon_add_person.png" class="main-icon"></image>
+        </view>
+        
+    </view>
+</view>    

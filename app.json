@@ -1,6 +1,7 @@
 {
-  "pages": [
-      "pages/periodic_account/periodic_account",
+    "pages": [
+        "pages/expenditure/expenditure",
+    "pages/periodic_account/periodic_account",
     "pages/book_setting/book_setting",
     "pages/edit_name/edit_name",
     "pages/member_management/member_management",
