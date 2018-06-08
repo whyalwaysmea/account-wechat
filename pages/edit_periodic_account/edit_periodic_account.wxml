@@ -1,0 +1,40 @@
+<!--pages/edit_periodic_account/edit_periodic_account.wxml-->
+<view class="container">
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">选择账本</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">默认账本</view>
+        </view>
+
+        <view class="weui-cell" bindtap="bindWays">
+            <view class="weui-cell__bd">入账方式</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">支出</view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-cell__bd">使用类别</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-cell__bd">使用账户</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-cell__bd">金额</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-cell__bd">自动记账时间</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">每月一号</view>
+        </view>
+        <view class="weui-cell" bindtap="bindRepeat">
+            <view class="weui-cell__bd">重复周期</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">每月一次</view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-cell__bd">备注</view>
+            <textarea  placeholder="自动记账"  class="weui-cell__ft weui-cell__ft_in-access" auto-height/>          
+        </view>
+
+
+    </view>
+</view>

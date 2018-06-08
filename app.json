@@ -1,6 +1,8 @@
 {
-    "pages": [
-        "pages/expenditure/expenditure",
+  "pages": [
+    "pages/edit_periodic_account/edit_periodic_account",  
+    "pages/simple_list/simple_list",
+    "pages/expenditure/expenditure",
     "pages/periodic_account/periodic_account",
     "pages/book_setting/book_setting",
     "pages/edit_name/edit_name",
@@ -9,7 +11,7 @@
     "pages/my/my",
     "pages/account/account",
     "pages/books/books",
-    "pages/statistics/statistics"
+    "pages/statistics/statistics"    
   ],
   "window": {
     "backgroundTextStyle": "light",
