@@ -1,7 +1,7 @@
 var api = require('../config/api.js');
 
 // HTTP工具类，参考https://github.com/tumobi/nideshop-mini-program/blob/master/utils/util.js
-function request(url, data = {}, method = "GET", showLoading = false) {
+function request(url, data = {}, method = "GET", showLoading = true) {
     if(showLoading) {
         wx.showLoading({
             title: '加载中',
@@ -17,51 +17,24 @@ function request(url, data = {}, method = "GET", showLoading = false) {
                 'Content-Type': 'application/json',
                 'X-Nideshop-Token': wx.getStorageSync('token')
             },
-            success: function (res) {
-                console.log("success");
+            success: function (res) {                
                 if(showLoading) {
                     wx.hideLoading();
                 }
-                if (res.statusCode == 200) {
 
-                    if (res.data.errorCode == 401) {
-                        //需要登录后才可以操作
-
-                        let code = null;
-                        return login().then((res) => {
-                            code = res.code;
-                            return getUserInfo();
-                        }).then((userInfo) => {
-                            //登录远程服务器
-                            request(api.AuthLoginByWeixin, { code: code, userInfo: userInfo }, 'POST').then(res => {
-                                if (res.errno === 0) {
-                                    //存储用户信息
-                                    wx.setStorageSync('userInfo', res.data.userInfo);
-                                    wx.setStorageSync('token', res.data.token);
-
-                                    resolve(res);
-                                } else {
-                                    reject(res);
-                                }
-                            }).catch((err) => {
-                                reject(err);
-                            });
-                        }).catch((err) => {
-                            reject(err);
-                        })
-                    } else {
-                        resolve(res.data);
-                    }
+                if (res.statusCode == 200 && res.data.success == true) {                    
+                    resolve(res.data.value);                    
                 } else {
-                    showErrorToast('服务器错误!o_O');
-                    reject(res.errMsg);
+                    showErrorToast('服务器错误!');
+                    reject(res);
                 }
-
             },
             fail: function (err) {
-                reject(err)
+                if(showLoading) {
+                    wx.hideLoading();
+                }
+                reject(err.message)
                 showErrorToast('服务器错误!');
-                console.log("failed")
             }
         })
     });

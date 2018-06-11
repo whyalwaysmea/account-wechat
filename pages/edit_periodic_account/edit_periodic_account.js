@@ -1,4 +1,7 @@
 // pages/edit_periodic_account/edit_periodic_account.js
+var httpUtils = require('../../utils/httpUtils');
+var api = require('../../config/api.js');
+var app = getApp();
 Page({
 
     /**
@@ -13,16 +16,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
     },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
 
     bindPickerChange: function(e) {
         wx.showActionSheet({
