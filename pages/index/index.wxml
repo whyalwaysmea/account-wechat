@@ -1,6 +1,9 @@
 <!--index.wxml-->
 <view class="container">
     <!-- 头部 -->
+    <!-- 需要使用 button 来授权登录 -->
+    
+
     <view class="header-layout">        
         <navigator url="/pages/my/my"  >
             <image src="../../images/icon_my.png" class="icon-my header-icon"></image>
@@ -56,11 +59,10 @@
                 <text class="record-money day-output">12.00</text>
             </view>
         </view>
-
-
     </view>
 
 
     <!-- 记一笔 -->
     <button class="btn_record">记一笔</button>
+
 </view>

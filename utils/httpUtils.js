@@ -15,7 +15,7 @@ function request(url, data = {}, method = "GET", showLoading = true) {
             method: method,
             header: {
                 'Content-Type': 'application/json',
-                'X-Nideshop-Token': wx.getStorageSync('token')
+                'Authorization': wx.getStorageSync('account-token')
             },
             success: function (res) {                
                 if(showLoading) {

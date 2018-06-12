@@ -1,7 +1,8 @@
 {
   "pages": [
+      "pages/authorize/authorize",
     "pages/index/index",
-    "pages/edit_periodic_account/edit_periodic_account",  
+    "pages/edit_periodic_account/edit_periodic_account",
     "pages/simple_list/simple_list",
     "pages/expenditure/expenditure",
     "pages/periodic_account/periodic_account",
@@ -11,7 +12,7 @@
     "pages/my/my",
     "pages/account/account",
     "pages/books/books",
-    "pages/statistics/statistics"    
+    "pages/statistics/statistics"
   ],
   "window": {
     "backgroundTextStyle": "light",
