@@ -1,6 +1,4 @@
 // pages/edit_periodic_account/edit_periodic_account.js
-var httpUtils = require('../../utils/httpUtils');
-var api = require('../../config/api.js');
 var app = getApp();
 Page({
 

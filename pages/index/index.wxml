@@ -1,9 +1,6 @@
 <!--index.wxml-->
 <view class="container">
     <!-- 头部 -->
-    <!-- 需要使用 button 来授权登录 -->
-    
-
     <view class="header-layout">        
         <navigator url="/pages/my/my"  >
             <image src="../../images/icon_my.png" class="icon-my header-icon"></image>
@@ -65,4 +62,9 @@
     <!-- 记一笔 -->
     <button class="btn_record">记一笔</button>
 
+    <view wx:if="{{showAuthorize}}" class="authorize-dialog">
+        <text class="authorize-info">1.为了更好的同步数据</text>
+        <text class="authorize-info">2.为了更好的展示昵称，头像等信息</text>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="weui-btn" type="primary">授权登录</button> 
+    </view>
 </view>

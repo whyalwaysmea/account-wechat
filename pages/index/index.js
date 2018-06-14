@@ -1,49 +1,61 @@
 //index.js
 //获取应用实例
 const app = getApp()
+import api from '../../config/api';
 
 Page({
     data: {
-        userInfo: {},
-        hasUserInfo: false,
+        showAuthorize: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo')
     },
 
     onLoad: function () {
-        if (app.globalData.userInfo) {
+        if(app.globalData.needAuthorize && this.data.canIUse) {
+            // 需要授权按钮
             this.setData({
-                userInfo: app.globalData.userInfo,
-                hasUserInfo: true
+                showAuthorize: true
             })
-        } else if (this.data.canIUse) {
-            // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-            // 所以此处加入 callback 以防止这种情况
-            app.userInfoReadyCallback = res => {
-                console.log(res);
-                this.setData({
-                    userInfo: res.userInfo,
-                    hasUserInfo: true
-                })
-            }
-        } else {
-            // 在没有 open-type=getUserInfo 版本的兼容处理
+        } else if(app.globalData.needAuthorize) {
             wx.getUserInfo({
                 success: res => {                    
-                    app.globalData.userInfo = res.userInfo
-                    this.setData({
-                        userInfo: res.userInfo,
-                        hasUserInfo: true
-                    })
+                    let userInfo = res.userInfo;
+                    this.updateUserInfo(userInfo);                    
                 }
             })
+        } else {
+            console.log(app.globalData);
+            this.getAccountBook(app.globalData.defaultAccountId);
         }
+        
     },
 
     getUserInfo: function (e) {
-        app.globalData.userInfo = e.detail.userInfo
+        let userInfo = e.detail.userInfo
         this.setData({
-            userInfo: e.detail.userInfo,
-            hasUserInfo: true
+            showAuthorize: false
+        })
+
+        // 同步用户信息
+        this.updateUserInfo(userInfo);
+    },
+
+    updateUserInfo: function(e) {
+        if(app.globalData.needAuthorize) {
+            e.createBook = true;
+        }
+        
+        api.updateUserInfo(e)
+            .then(res => {
+                app.globalData.needAuthorize = false;
+                app.globalData.defaultAccountId = res.defaultAccount;
+                this.getAccountBook(app.globalData.defaultAccountId);
+            })
+    },
+
+
+    getAccountBook: function(id) {
+        api.getAccountBookDetails(id).then(res => {
+            console.log(res);
         })
     }
 })
