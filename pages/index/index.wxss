@@ -34,6 +34,7 @@
     background-color: #fff;
     border: 1px solid #d1d1d1;
     position: relative;
+    z-index: 999;
 }
 
 
@@ -63,6 +64,10 @@
     font-size: 12px;
     padding-bottom: 12rpx;
     color: #8f8f8f;
+}
+
+.set-budgetaryAmount {
+    color: #da4040;
 }
 
 /* 记录列表 */

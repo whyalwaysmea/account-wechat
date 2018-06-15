@@ -16,7 +16,6 @@ App({
                         } else {
                             this.globalData.defaultAccountId = res.defaultAccount;
                         }
-                        console.log(this.globalData.defaultAccountId);
                         if (this.userInfoReadyCallback) {
                             this.userInfoReadyCallback(res)
                         }
@@ -25,7 +24,6 @@ App({
             fail: res => {
                 // 登录
                 api.login().then(res => {
-                    console.log(res);
                     let openId = res.wechatOpenid;
                     this.globalData.token = openId;
                     wx.setStorageSync('account-token', openId)

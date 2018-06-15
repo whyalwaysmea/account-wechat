@@ -1,0 +1,9 @@
+var filters = {
+  toFix: function (value) {
+    var temp = value / 100;
+    return temp.toFixed(2)//此处2为保留两位小数
+  }
+}
+module.exports = {
+  toFix: filters.toFix
+}

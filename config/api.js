@@ -32,8 +32,20 @@ export default class api extends httpUtils {
         return this.request(`${baseUrl}/user/updateInfo`, param, 'POST', false);
     }
 
-    // 账本相关
+    /**
+     * 账本详情
+     * @param {*} id 账本id
+     */
     static getAccountBookDetails(id) {
         return this.request(`${baseUrl}/accountbook/${id}`, {}, 'GET');
+    }
+
+    /**
+     * 获取记录列表
+     * @param  id 账本id
+     * @param  page 页码
+     */
+    static getRecordList(id, page) {
+        return this.request(`${baseUrl}/record/${id}`, {page, page});
     }
 };

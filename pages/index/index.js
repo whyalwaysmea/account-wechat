@@ -6,7 +6,9 @@ import api from '../../config/api';
 Page({
     data: {
         showAuthorize: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        accountInfo: null,
+        avatars: [],
     },
 
     onLoad: function () {
@@ -23,7 +25,6 @@ Page({
                 }
             })
         } else {
-            console.log(app.globalData);
             this.getAccountBook(app.globalData.defaultAccountId);
         }
         
@@ -55,7 +56,26 @@ Page({
 
     getAccountBook: function(id) {
         api.getAccountBookDetails(id).then(res => {
-            console.log(res);
+            wx.setNavigationBarTitle({
+                title: res.name
+            })
+
+            let avatars = res.participants.map(part => {
+                return part.avatarUrl;
+            });
+            this.setData({
+                avatars: avatars,
+                accountInfo: res
+            })
         })
+
+
+        api.getRecordList(id, 1).then(res => {
+            console.log(res);
+        });
+    },
+
+    setBudgetary: function() {
+        console.log('设置预算');
     }
 })
