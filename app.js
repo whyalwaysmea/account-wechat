@@ -4,44 +4,37 @@ import api from './config/api';
 App({
     onLaunch: function () {        
         // openid存本地， 如果本地没有，再去登录
-        wx.getStorage({
-            key: 'account-token',
-            success: res => {
-                this.globalData.token = res.data;
-                api.updateLastActivityDate()
-                    .then(res => {
-                        if(!res.defaultAccount) {
-                            // 授权
-                            this.globalData.needAuthorize = true;
-                        } else {
-                            this.globalData.defaultAccountId = res.defaultAccount;
-                        }
-                        if (this.userInfoReadyCallback) {
-                            this.userInfoReadyCallback(res)
-                        }
-                    });
-            },
-            fail: res => {
-                // 登录
-                api.login().then(res => {
-                    let openId = res.wechatOpenid;
-                    this.globalData.token = openId;
-                    wx.setStorageSync('account-token', openId)
-                    if(!res.defaultAccount) {
-                        // 授权
-                        this.globalData.needAuthorize = true;
-                    } else {
-                        this.globalData.defaultAccountId = res.defaultAccount;
-                    }
+        let token = wx.getStorageSync('account-token');
+        if(token) {
+            this.globalData.token = token;
+            api.updateLastActivityDate()
+            .then(res => {
+                if(res.defaultAccount) {
+                    this.globalData.defaultAccountId = res.defaultAccount;
+                    this.globalData.needAuthorize = false;
+                    wx.setStorageSync('defaultAccountId', this.globalData.defaultAccountId)
+                }
+                if (this.userInfoReadyCallback) {
+                    this.userInfoReadyCallback(res)
+                }
+            });
+        } else {
+            // 登录
+            api.login().then(res => {
+                let openId = res.wechatOpenid;
+                this.globalData.token = openId;
+                wx.setStorageSync('account-token', openId)
+                if(res.defaultAccount) {
+                    this.globalData.defaultAccountId = res.defaultAccount;
+                    this.globalData.needAuthorize = false;
+                    wx.setStorageSync('defaultAccountId', this.globalData.defaultAccountId)
+                }
 
-                    if (this.userInfoReadyCallback) {
-                        this.userInfoReadyCallback(res)
-                    }
-                });
-            }
-        })
-
-
+                if (this.userInfoReadyCallback) {
+                    this.userInfoReadyCallback(res)
+                }
+            });
+        }
 
         // 获取用户信息
         wx.getSetting({
@@ -66,7 +59,7 @@ App({
     globalData: {
         userInfo: null,
         token: '',
-        needAuthorize: false,       // 是否需要授权
+        needAuthorize: true,       // 是否需要授权
         defaultAccountId: '',
     }
 })

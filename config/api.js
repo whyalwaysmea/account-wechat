@@ -9,7 +9,6 @@ export default class api extends httpUtils {
         return new Promise((resolve, reject) => {
             wx.login({
                 success: (res) => {
-                    console.log(res);
                     let url = `${baseUrl}/user/login`;
                     this.request(url, {code: res.code}).then(res => {
                         resolve(res);
@@ -47,5 +46,20 @@ export default class api extends httpUtils {
      */
     static getRecordList(id, page) {
         return this.request(`${baseUrl}/record/${id}`, {page, page});
+    }
+
+
+    /**
+     * 获取支出分类列表
+     */
+    static getExpenditureList() {
+        return this.request(`${baseUrl}/expenditure/list`);
+    }
+
+    /**
+     * 获取收入分类列表
+     */
+    static getIncomeList() {
+        return this.request(`${baseUrl}/income/list`);
     }
 };

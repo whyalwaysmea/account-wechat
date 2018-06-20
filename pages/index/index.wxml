@@ -64,7 +64,10 @@
 
 
     <!-- 记一笔 -->
-    <button class="btn_record">记一笔</button>
+    <navigator url="/pages/account/account" >
+        <button class="btn_record">记一笔</button>
+    </navigator>
+    
 
     <view wx:if="{{showAuthorize}}" class="authorize-dialog">
         <text class="authorize-info">1.为了更好的同步数据</text>

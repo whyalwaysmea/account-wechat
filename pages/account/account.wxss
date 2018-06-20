@@ -9,7 +9,9 @@
     height:24px;
     line-height:24px;
     padding-top:10px;
+    color: #555;
 }
+
 
 .income-type {
     flex-grow: 1;
@@ -18,10 +20,6 @@
     border-bottom-left-radius: 5px;
 }
 
-.selected {
-    background-color: #bfbfbf;
-    color: #fff;
-}
 
 .output-type {
     flex-grow: 1;    
@@ -30,6 +28,13 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+
+.selected {
+    color: #da4040;
+    border: 1px solid #da4040;
+}
+
 
 /* 金额 */
 .input-layout {
@@ -40,21 +45,11 @@
     position: relative;
 }
 
-.input-icon-pannel {
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
+.input-icon {
+    width: 28px;
+    height: 28px;
     margin-top: 10px; 
     float: left;
-    text-align: center;
-    background-color:#99DAF6;
-}
-
-.input-icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 12px;   
-    margin-bottom:3px;
 }
 
 .input-name {

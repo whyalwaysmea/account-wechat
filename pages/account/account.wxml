@@ -1,92 +1,21 @@
 <!--pages/account/account.wxml-->
 <view class="container">
     <view class="type-table">
-        <text class="income-type ">收入</text>
-        <text class="output-type selected">支出</text>
+        <text class="income-type {{moneyType == 1 ? 'selected' : ''}}" bindtap="changeMoenyType" data-moneyType="1">收入</text>
+        <text class="output-type {{moneyType == 2 ? 'selected' : ''}}" bindtap="changeMoenyType" data-moneyType="2">支出</text>
     </view>
     <view class="input-layout">
-        <view class="input-icon-pannel">
-            <image src="../../images/output/icon_child_selected.png" class="input-icon"></image>
-        </view>
-        
-        <text class="input-name">孩子</text>
+        <image src="{{selectedUrl}}" class="input-icon"></image>
+        <text class="input-name">{{selectedName}}</text>
         
         <text class="input-money">123</text>
         <text class="input-money calculation">564+48+521=</text>
     </view>
     <scroll-view class="classify-layout" scroll-y style="height: 150px;">
-        <view class="classify-item">
-            <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-            <text class="classify-name">餐饮</text>
-        </view>
-        <view class="classify-item">
-                <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                <text class="classify-name">餐饮</text>
-            </view>
-            <view class="classify-item">
-                    <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                    <text class="classify-name">餐饮</text>
-                </view>
-                <view class="classify-item">
-                        <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                        <text class="classify-name">餐饮</text>
-                    </view>
-                    <view class="classify-item">
-                            <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                            <text class="classify-name">餐饮</text>
-                        </view>
-                        <view class="classify-item">
-                                <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                <text class="classify-name">餐饮</text>
-                            </view>
-                            <view class="classify-item">
-                                    <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                    <text class="classify-name">餐饮</text>
-                                </view>
-                                <view class="classify-item">
-                                        <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                        <text class="classify-name">餐饮</text>
-                                    </view>
-                                    <view class="classify-item">
-                                            <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                            <text class="classify-name">餐饮</text>
-                                        </view>
-                                        <view class="classify-item">
-                                                <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                                <text class="classify-name">餐饮</text>
-                                            </view>
-                                            <view class="classify-item">
-                                                    <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                                    <text class="classify-name">餐饮</text>
-                                                </view>
-                                                <view class="classify-item">
-                                                        <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                                        <text class="classify-name">餐饮</text>
-                                                    </view>
-                                                    <view class="classify-item">
-                                                            <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                                            <text class="classify-name">餐饮</text>
-                                                        </view>
-                                                        <view class="classify-item">
-                                                                <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                                                <text class="classify-name">餐饮</text>
-                                                            </view>
-                                                            <view class="classify-item">
-                                                                    <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                                                    <text class="classify-name">餐饮</text>
-                                                                </view>
-                                                                <view class="classify-item">
-                                                                        <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                                                        <text class="classify-name">餐饮</text>
-                                                                    </view>
-                                                                    <view class="classify-item">
-                                                                            <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                                                            <text class="classify-name">餐饮</text>
-                                                                        </view>
-                                                                        <view class="classify-item">
-                                                                                <image src="../../images/input/icon_gift_unselected.png" class="classify-icon"/>
-                                                                                <text class="classify-name">餐饮</text>
-                                                                            </view>
+        <view class="classify-item" wx:for="{{classList}}" bindtap="changeClassType" data-index="{{index}}">
+            <image src="{{item.iconUrl}}" class="classify-icon"/>
+            <text class="classify-name">{{item.name}}</text>
+        </view>        
     </scroll-view>
 
 

@@ -12,6 +12,7 @@ Page({
     },
 
     onLoad: function () {
+        
         if(app.globalData.needAuthorize && this.data.canIUse) {
             // 需要授权按钮
             this.setData({
@@ -25,7 +26,8 @@ Page({
                 }
             })
         } else {
-            this.getAccountBook(app.globalData.defaultAccountId);
+            let defaultAccountId = wx.getStorageSync('defaultAccountId');
+            this.getAccountBook(defaultAccountId);
         }
         
     },
@@ -49,6 +51,7 @@ Page({
             .then(res => {
                 app.globalData.needAuthorize = false;
                 app.globalData.defaultAccountId = res.defaultAccount;
+                wx.setStorageSync('defaultAccountId', app.globalData.defaultAccountId);
                 this.getAccountBook(app.globalData.defaultAccountId);
             })
     },
