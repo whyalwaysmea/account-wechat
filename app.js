@@ -5,6 +5,11 @@ App({
     onLaunch: function () {        
         // openid存本地， 如果本地没有，再去登录
         let token = wx.getStorageSync('account-token');
+        let needAuthorize = wx.getStorageSync('account-needAuthorize');
+        if(!needAuthorize) {
+            this.globalData.needAuthorize = true;
+        }
+        
         if(token) {
             this.globalData.token = token;
             api.updateLastActivityDate()
@@ -13,6 +18,7 @@ App({
                     this.globalData.defaultAccountId = res.defaultAccount;
                     this.globalData.needAuthorize = false;
                     wx.setStorageSync('defaultAccountId', this.globalData.defaultAccountId)
+                    wx.setStorageSync('account-needAuthorize', true)                    
                 }
                 if (this.userInfoReadyCallback) {
                     this.userInfoReadyCallback(res)
@@ -28,6 +34,7 @@ App({
                     this.globalData.defaultAccountId = res.defaultAccount;
                     this.globalData.needAuthorize = false;
                     wx.setStorageSync('defaultAccountId', this.globalData.defaultAccountId)
+                    wx.setStorageSync('account-needAuthorize', true)
                 }
 
                 if (this.userInfoReadyCallback) {
@@ -54,12 +61,12 @@ App({
                 })
               }
             }
-          })
+        })
     },
     globalData: {
         userInfo: null,
         token: '',
-        needAuthorize: true,       // 是否需要授权
+        needAuthorize: false,       // 是否需要授权
         defaultAccountId: '',
     }
 })

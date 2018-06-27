@@ -149,6 +149,7 @@
     white-space: nowrap;
     width: 500rpx;
     float: left;
+    height: 100%;
 }
 
 .tag-item {
@@ -161,6 +162,11 @@
     line-height: 20px;
     margin-top: 3px;
     display: inline-block;
+}
+
+.tag-selected {
+    color: #da4040;
+    border: 1px solid #da4040;
 }
 
 .icon_remarks {
@@ -192,6 +198,8 @@
     line-height: 20px;
     float: left;
     margin-top: 2px;
+    width: 55px;
+    text-align: center;
 }
 
 

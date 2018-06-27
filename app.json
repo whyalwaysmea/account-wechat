@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/account/account",
         "pages/index/index",
         "pages/authorize/authorize",
         "pages/edit_periodic_account/edit_periodic_account",
@@ -10,7 +11,6 @@
         "pages/edit_name/edit_name",
         "pages/member_management/member_management",
         "pages/my/my",
-        "pages/account/account",
         "pages/books/books",
         "pages/statistics/statistics"
     ],

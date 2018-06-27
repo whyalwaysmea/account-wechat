@@ -8,8 +8,8 @@
         <image src="{{selectedUrl}}" class="input-icon"></image>
         <text class="input-name">{{selectedName}}</text>
         
-        <text class="input-money">123</text>
-        <text class="input-money calculation">564+48+521=</text>
+        <text class="input-money">{{money}}</text>
+        <text class="input-money calculation" wx:if="{{calculation != money}}">{{calculation}}</text>
     </view>
     <scroll-view class="classify-layout" scroll-y style="height: 150px;">
         <view class="classify-item" wx:for="{{classList}}" bindtap="changeClassType" data-index="{{index}}">
@@ -22,20 +22,11 @@
     <view class="footer-layout">
         <view class="tag-layout">
             <view class="tag">#备注#</view>
-            <scroll-view class="tag-list" scroll-x="true" >
-                <text class="tag-item">午餐1</text>
-                <text class="tag-item">午餐2</text>
-                <text class="tag-item">午餐3</text>
-                <text class="tag-item">午餐4</text>
-                <text class="tag-item">午餐5</text>
-                <text class="tag-item">午餐6</text>
-                <text class="tag-item">午餐7</text>
-                <text class="tag-item">午餐8</text>
-                <text class="tag-item">午餐9</text>
-                <text class="tag-item">午餐ba</text>
-                <text class="tag-item">午餐b</text>
+            <scroll-view class="tag-list" scroll-x="true" wx:if="{{childOutput.length > 0 && !editRemark}}">
+                <text class="tag-item {{item.id == selectedTag ? 'tag-selected' : ''}}" wx:for="{{childOutput}}" bindtap="changeTag" data-index="{{index}}">{{item.name}}</text>
             </scroll-view>
-            <image src="../../images/icon_edit.png" class="icon_remarks"/>
+            <input placeholder="请输入备注信息" focus="{{focus}}" bindinput ="inputRemark" wx:else/>             
+            <image src="../../images/icon_edit.png" class="icon_remarks" bindtap="editRemark"/>
         </view>
         <view class="info-layout">
             <text class="date">6月4日</text>
@@ -54,27 +45,27 @@
             <image src="../../images/icon_aacount_add_parter.png" class="account_add_person" />         
         </view>
         <view class="keybord-layout">
-            <view class="keybord-item">7</view>
-            <view class="keybord-item">8</view>
-            <view class="keybord-item">9</view>
-            <view class="keybord-item">
+            <view class="keybord-item" bindtap="inputNum" data-num="7">7</view>
+            <view class="keybord-item" bindtap="inputNum" data-num="8">8</view>
+            <view class="keybord-item" bindtap="inputNum" data-num="9">9</view>
+            <view class="keybord-item" bindtap="backOneStep">
                 <image src="../../images/icon_back.png"  style="width: 22px; height: 22px;"/>          
             </view>              
     
-            <view class="keybord-item">4</view>
-            <view class="keybord-item">5</view>
-            <view class="keybord-item">6</view>
-            <view class="keybord-item">-</view>
+            <view class="keybord-item" bindtap="inputNum" data-num="4">4</view>
+            <view class="keybord-item" bindtap="inputNum" data-num="5">5</view>
+            <view class="keybord-item" bindtap="inputNum" data-num="6">6</view>
+            <view class="keybord-item" bindtap="inputNum" data-num="-">-</view>
     
-            <view class="keybord-item">1</view>
-            <view class="keybord-item">2</view>
-            <view class="keybord-item">3</view>
-            <view class="keybord-item">+</view>
+            <view class="keybord-item" bindtap="inputNum" data-num="1">1</view>
+            <view class="keybord-item" bindtap="inputNum" data-num="2">2</view>
+            <view class="keybord-item" bindtap="inputNum" data-num="3">3</view>
+            <view class="keybord-item" bindtap="inputNum" data-num="+">+</view>
     
-            <view class="keybord-item">.</view>
-            <view class="keybord-item">0</view>
-            <view class="keybord-item">删除</view>
-            <view class="keybord-item">完成</view>
+            <view class="keybord-item" bindtap="inputNum" data-num=".">.</view>
+            <view class="keybord-item" bindtap="inputNum" data-num="0">0</view>
+            <view class="keybord-item" bindtap="clearInput" >清空</view>
+            <view class="keybord-item" bindtap="overInput">完成</view>
         </view>
     </view>
     
