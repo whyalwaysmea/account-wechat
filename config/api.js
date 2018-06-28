@@ -62,4 +62,19 @@ export default class api extends httpUtils {
     static getIncomeList() {
         return this.request(`${baseUrl}/income/list`);
     }
+
+    /**
+     * 获取收支方式
+     */
+    static getWays() {
+        return this.request(`${baseUrl}/way/list`);
+    }
+
+    /**
+     * 获取指定账本的所有参与者
+     * @param {账本id} bookId 
+     */
+    static getBookParters(bookId) {
+        return this.request(`${baseUrl}/accountbook/parter/${bookId}`)
+    }
 };

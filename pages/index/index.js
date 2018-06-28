@@ -9,6 +9,7 @@ Page({
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         accountInfo: null,
         avatars: [],
+        bookId: 0,
     },
 
     onLoad: function () {
@@ -26,14 +27,15 @@ Page({
                 }
             })
         } else {
-            let defaultAccountId = wx.getStorageSync('defaultAccountId');
-            this.getAccountBook(defaultAccountId);
+            this.data.bookId = wx.getStorageSync('defaultAccountId');
+            this.getAccountBook(this.data.bookId);
         }
         
     },
 
     getUserInfo: function (e) {
         let userInfo = e.detail.userInfo
+        app.globalData.userInfo = userInfo;
         this.setData({
             showAuthorize: false
         })
@@ -74,11 +76,16 @@ Page({
 
 
         api.getRecordList(id, 1).then(res => {
-            console.log(res);
         });
     },
 
     setBudgetary: function() {
         console.log('设置预算');
+    },
+
+    record: function(e) {
+        wx.navigateTo({
+            url: '../../pages/account/account?bookId=' + this.data.bookId
+        })
     }
 })

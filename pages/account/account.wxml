@@ -29,20 +29,21 @@
             <image src="../../images/icon_edit.png" class="icon_remarks" bindtap="editRemark"/>
         </view>
         <view class="info-layout">
-            <text class="date">6月4日</text>
-            <text class="way">微信支付</text>           
+            <picker mode="date" value="{{selectedDate}}" start="2018-01-01" end="new Date()" bindchange="bindDateChange">
+                <view class="picker">
+                    <text class="date">{{date}}</text>
+                </view>
+            </picker>
+            <picker bindchange="bindWaysChange" value="{{selectWayIndex}}" range="{{allWaysName}}">
+                <view class="picker">
+                    <text class="date">{{allWaysName[selectWayIndex]}}</text>
+                </view>
+            </picker>          
+
             <scroll-view class="person-layout" scroll-x="true">
-                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
-                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account"></image>
-                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
-                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
-                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
-                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
-                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
-                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
-                <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account" ></image>
+                <image src="{{item.avatarUrl}}"  class="avatars-account" wx:for="{{parties}}" wx:if="{{item.select}}"></image>
             </scroll-view>    
-            <image src="../../images/icon_aacount_add_parter.png" class="account_add_person" />         
+            <image src="../../images/icon_aacount_add_parter.png" class="account_add_person" bindtap="bindParter"/>         
         </view>
         <view class="keybord-layout">
             <view class="keybord-item" bindtap="inputNum" data-num="7">7</view>
@@ -65,8 +66,27 @@
             <view class="keybord-item" bindtap="inputNum" data-num=".">.</view>
             <view class="keybord-item" bindtap="inputNum" data-num="0">0</view>
             <view class="keybord-item" bindtap="clearInput" >清空</view>
-            <view class="keybord-item" bindtap="overInput">完成</view>
+            <view class="keybord-item" bindtap="overInput" style="color: #da4040">完成</view>
         </view>
     </view>
     
+
+    <zan-popup
+        show="{{ showParter }}"
+        type="bottom"
+        overlay="true"
+        bindclose="togglePopup">
+        <view class="select-parter-layout pop-example__container pop-example__container--bottom">
+            <view class="select-parter-header">
+                <text class="select-cancel">取消</text>
+                <text class="select-confirm">确认</text>
+                <text class="select-add">添加</text>
+            </view>
+            <view class="select-item" wx:for="{{parties}}">
+                <image src="{{item.avatarUrl}}" class="select-item-avatar"/>
+                <text class="select-item-name">{{item.nickName}}</text>
+                <image src="../../images/icon_selected.png" wx:if="{{item.select}}" class="select-item-select"/>
+            </view>
+        </view>    
+    </zan-popup>
 </view>    

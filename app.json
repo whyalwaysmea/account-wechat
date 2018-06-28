@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/account/account",
         "pages/index/index",
+        "pages/account/account",
         "pages/authorize/authorize",
         "pages/edit_periodic_account/edit_periodic_account",
         "pages/simple_list/simple_list",

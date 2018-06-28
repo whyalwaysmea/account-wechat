@@ -55,7 +55,7 @@
 .input-name {
     margin-left: 10px;
     color: #333;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .calculation,
@@ -228,4 +228,80 @@
     position:absolute;
     right:10px;
     margin-top:3px;
+}
+
+/* 选择参与人 */
+.pop-example--top {
+    width: 100vw;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  .pop-example__container {
+    overflow: hidden;
+    background: #fff;
+  }
+  
+  .pop-example__container--bottom {
+    width: 100vw;
+  }
+  
+  .pop-example__container--left, .pop-example__container--right {
+    height: 100vh;
+  }
+
+.select-parter-layout {
+    padding: 0 15px;
+    background-color: #FFF;
+}
+
+.select-parter-header {
+    border-bottom: 1px solid #e1e1e1;
+    height:40px;
+    line-height:40px;
+    font-size:12px;
+    padding:0 15px;
+}
+
+.select-cancel {
+    float: left;
+}
+
+.select-add,
+.select-confirm {
+    float: right;
+    margin-left: 15px;
+}
+
+
+.select-item {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #e1e1e1;
+    padding:0 15px;
+}
+
+.select-item-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    margin-top: 4px;
+    float: left;
+    margin-right: 10px;
+}
+
+.select-item-select {
+    width: 24px;
+    height: 24px;
+    margin-top: 7px;
+    border-radius: 12px;
+    float: right;
+}
+
+.select-item-avatar {
+    font-size: 14px;
+    color: #333;
 }

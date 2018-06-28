@@ -64,9 +64,7 @@
 
 
     <!-- 记一笔 -->
-    <navigator url="/pages/account/account" >
-        <button class="btn_record">记一笔</button>
-    </navigator>
+    <button class="btn_record" bindtap="record">记一笔</button>
     
 
     <view wx:if="{{showAuthorize}}" class="authorize-dialog">

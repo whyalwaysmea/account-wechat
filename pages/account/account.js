@@ -1,6 +1,7 @@
 // pages/account/account.js
 import api from '../../config/api';
-
+import utils from '../../utils/util';
+const app = getApp()
 Page({
 
     /**
@@ -24,13 +25,38 @@ Page({
         tempResult: 0,          // 结算过程中间结果
         tempResults: [],        // 所有的中间结果
         tempInput: '',          // 结算过程中间输入
-        tempInputs: []          // 所有输入
+        tempInputs: [],          // 所有输入
+        date: new Date(),       // 日期
+        selectedDate: new Date(),   // 选择的日期
+        allWays: [],
+        allWaysName: [],
+        selectWayIndex: 0,
+        parties: [],
+        showParter: false,
+        bookId: 0,
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        this.data.bookId = options.bookId
+        this.setData({
+            date: this.formatDate(utils.today())
+        })
+
+        api.getBookParters(this.data.bookId)
+            .then(res => {
+                for(let i = 0; i < res.length; i++) {
+                    if(res[i].wechatOpenid == app.globalData.token) {
+                        res[i].select = true;
+                    }
+                }
+                this.setData({
+                    parties: res,
+                })
+            })
+        
         api.getExpenditureList()
             .then(res => {
                 this.setData({
@@ -48,6 +74,17 @@ Page({
                 this.setData({
                     income: res
                 })                
+            })    
+
+        api.getWays()
+            .then(res => {
+                this.data.allWaysName = res.map(item => {
+                    return item.name
+                })
+                this.data.allWays = res;
+                this.setData({
+                    allWaysName: this.data.allWaysName
+                })
             })    
     },
 
@@ -266,6 +303,8 @@ Page({
      * 清空输入
      */
     clearInput: function() {
+        this.data.tempInputs = [];
+        this.data.tempResults = [];
         this.setData({
             tempInput:  '',
             tempResult: '',
@@ -280,5 +319,35 @@ Page({
      */
     overInput: function() {
 
+    },
+
+    bindDateChange: function(e) {
+        this.data.selectedDate = e.detail.value;
+        let formatDate = this.formatDate(e.detail.value);
+        this.setData({
+            date: formatDate
+        })
+    },
+
+    formatDate: function(date) {
+        return date.substring(5, date.length)
+    },
+
+    bindWaysChange: function(e) {
+        this.setData({
+            selectWayIndex: e.detail.value
+        })
+    },
+
+    bindParter: function(e) {
+        this.setData({
+            showParter: true
+        })
+    },
+
+    togglePopup: function(e) {
+        this.setData({
+            showParter: false
+        })
     }
 })

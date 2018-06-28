@@ -1,3 +1,6 @@
 {
-    "navigationBarTitleText": "记一笔"
+    "navigationBarTitleText": "记一笔",
+    "usingComponents": {
+        "zan-popup": "../../style/popup/index"
+    }  
 }
