@@ -191,7 +191,8 @@ Page({
      */
     backOneStep: function() {
         if(this.data.calculationType == 0) {
-            let newNum = this.data.money.substring(0, this.data.money.length - 1);
+            let moneyStr = this.data.money + '';
+            let newNum = moneyStr.substring(0, moneyStr.length - 1);
             if(newNum == '') {
                 newNum = '0';
             }
@@ -199,51 +200,64 @@ Page({
                 calculation: newNum,
                 money: newNum
             })
-        } else {
-            let addLastIndex = this.data.calculation.lastIndexOf('+');
-            let reduceLastIndex = this.data.calculation.lastIndexOf('-');
+        } else if(this.data.tempInputs.length > 0){
+            
             let newCalculation;
-
 
             if(this.data.tempInput.length > 1) {
                 // 此次计算的数字还没有删除完
-                this.data.tempInput = this.data.tempInput.substring(0, this.data.calculation.length - 1);;
+                this.data.tempInput = this.data.tempInput.substring(0, this.data.tempInput.length - 1);;
                 newCalculation = this.data.calculation.substring(0, this.data.calculation.length - 2);
             } else if(this.data.tempInput.length == 1) {
-                // 此次计算的数字删完了
+                // 此次计算的数字删完了, 取新值
                 this.data.tempInput = this.data.tempInputs.pop();
                 newCalculation = this.data.calculation.substring(0, this.data.calculation.length - 3);
 
-                this.data.tempResult = this.data.tempResults.pop();
-                this.data.calculationType = addLastIndex > reduceLastIndex ? 1 : 2;
+                let addLastIndex = newCalculation.lastIndexOf('+');
+                let reduceLastIndex = newCalculation.lastIndexOf('-');
+
+                if(this.data.tempResults.length > 1) {
+                    this.data.tempResult = this.data.tempResults.pop();
+                    this.data.tempResult = this.data.tempResults[this.data.tempResults.length - 1];
+    
+                    this.data.calculationType = addLastIndex > reduceLastIndex ? 1 : 2;
+                } else {
+                    this.data.calculationType = 0;
+                }
+                
+            } else {
+                this.setData({
+                    calculation: this.data.calculation.substring(0, this.data.calculation.length - 1)
+                })
+                return ;
             }
             
             
 
             let tempResult = this.data.tempResult;
             let tempInput = this.data.tempInput;
+
+            
             if(this.data.calculationType == 1) {
                 // 加
                 tempResult = parseFloat(tempResult) + parseFloat(tempInput);
-            } else {
+            } else if(this.data.calculationType == 2) {
                 // 减
                 tempResult = parseFloat(tempResult) - parseFloat(tempInput);
             }
+            
+            
             if(this.data.tempInputs.length == 0) {
                 this.setData({
-                    calculation: Math.round(tempResult * 100) / 100,
-                    money: Math.round(tempResult * 100) / 100
+                    calculation: Math.round(parseFloat(tempResult) * 100) / 100,
+                    money: Math.round(parseFloat(tempResult) * 100) / 100
                 })
             } else {
                 this.setData({
                     calculation: newCalculation + '=',
                     money: Math.round(tempResult * 100) / 100
                 })
-            }
-            
-            if(tempInput == '0' && this.data.tempInput.length > 1) {
-                this.data.tempInput = this.data.tempInput.substring(0, this.data.tempInput.length - 1);
-            }
+            }            
             
         }
     },
