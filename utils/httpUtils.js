@@ -1,4 +1,6 @@
 // HTTP工具类，参考https://github.com/tumobi/nideshop-mini-program/blob/master/utils/util.js
+import util from '../utils/util';
+
 export default class httpUtils {
     /**
      * 发起网络请求
@@ -31,7 +33,10 @@ export default class httpUtils {
                     if (res.statusCode == 200 && res.data.success == true) {
                         resolve(res.data.value);
                     } else {
-                        this.showErrorToast('服务器错误!');
+                        wx.showToast({
+                            title: '服务器错误',
+                            image: '../images/icon_error.png'
+                        })
                         reject(res);
                     }
                 },
@@ -40,7 +45,10 @@ export default class httpUtils {
                         wx.hideLoading();
                     }
                     reject(err.message)
-                    this.showErrorToast('服务器错误!');
+                    wx.showToast({
+                        title: '服务器错误',
+                        image: '../images/icon_error.png'
+                    })
                 }
             })
         });
@@ -68,7 +76,6 @@ export default class httpUtils {
             wx.getUserInfo({
                 withCredentials: true,
                 success: function (res) {
-                    console.log(res)
                     resolve(res);
                 },
                 fail: function (err) {
@@ -77,12 +84,6 @@ export default class httpUtils {
             })
         });
     }
-
-    static showErrorToast(msg) {
-        wx.showToast({
-            title: msg,
-            image: '../images/icon_error.png'
-        })
-    }
+    
 }
 

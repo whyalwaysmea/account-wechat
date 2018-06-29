@@ -26,12 +26,13 @@ Page({
         tempResults: [],        // 所有的中间结果
         tempInput: '',          // 结算过程中间输入
         tempInputs: [],          // 所有输入
-        date: new Date(),       // 日期
+        date: new Date(),       // 显示的日期 mm-dd
         selectedDate: new Date(),   // 选择的日期
         allWays: [],
         allWaysName: [],
         selectWayIndex: 0,
         parties: [],
+        tempParties: [],
         showParter: false,
         bookId: 0,
     },
@@ -41,6 +42,7 @@ Page({
      */
     onLoad: function (options) {
         this.data.bookId = options.bookId
+        this.data.selectedDate = utils.today();
         this.setData({
             date: this.formatDate(utils.today())
         })
@@ -54,6 +56,7 @@ Page({
                 }
                 this.setData({
                     parties: res,
+                    tempParties: utils.deepCopy(res),
                 })
             })
         
@@ -100,9 +103,17 @@ Page({
             classList: classList,
             selectedId: classList[0].id,
             selectedUrl: classList[0].iconUrl,
-            selectedName: classList[0].name,
-            childOutput: classList[0].childExpenditure,
+            selectedName: classList[0].name,      
         })
+        if(type == 1) {
+            this.setData({
+                childOutput: [],
+            })
+        } else {
+            this.setData({
+                childOutput: classList[0].childExpenditure,      
+            })
+        }
     },
 
     /**
@@ -317,8 +328,39 @@ Page({
     /**
      * 记录
      */
-    overInput: function() {
-
+    record: function() {
+        if(this.data.money == '0') {
+            wx.showToast({
+                title: '请输入金额',
+                image: '../../images/icon_error.png'
+            })
+            return ;
+        }
+        let partersIds = this.data.parties.filter(item => {
+            return item.select
+        }).map(item => {
+            return item.wechatOpenid
+        })
+        
+        let payIncomeWayId = this.data.allWays[this.data.selectWayIndex].id;
+        let param = {
+            bookId: this.data.bookId,
+            amount: parseFloat(this.data.money) * 100,
+            recordType: this.data.moneyType,
+            payIncomeWay: payIncomeWayId,
+            mainType: this.data.selectedId,
+            secondaryType: this.data.selectedTag,
+            recordTime: this.data.selectedDate,
+            remark: this.data.remark,
+            partersId: partersIds
+        }
+        api.record(param)
+            .then(res => {
+                console.log('成功');
+            })
+            .catch(error => {
+                console.log(erroe);
+            })
     },
 
     bindDateChange: function(e) {
@@ -345,9 +387,31 @@ Page({
         })
     },
 
-    togglePopup: function(e) {
+    cancelSelectParter: function(e) {
         this.setData({
-            showParter: false
+            showParter: false,
+            tempParties: utils.deepCopy(this.data.parties)
         })
-    }
+    },
+
+    confirmSelectPater: function(e) {
+        this.setData({
+            showParter: false,
+            parties: utils.deepCopy(this.data.tempParties)
+        })
+    },
+
+    bindItemParter: function(e) {
+        let index = e.currentTarget.dataset.index;
+        let tempParties = this.data.tempParties;
+        if(tempParties[index].select) {
+            tempParties[index].select = false;
+        } else {
+            tempParties[index].select = true;
+        }
+        this.setData({
+            tempParties: tempParties
+        })
+    },
+
 })

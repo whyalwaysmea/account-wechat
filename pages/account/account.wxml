@@ -40,7 +40,7 @@
                 </view>
             </picker>          
 
-            <scroll-view class="person-layout" scroll-x="true">
+            <scroll-view class="person-layout" scroll-x="true" bindtap="bindParter">
                 <image src="{{item.avatarUrl}}"  class="avatars-account" wx:for="{{parties}}" wx:if="{{item.select}}"></image>
             </scroll-view>    
             <image src="../../images/icon_aacount_add_parter.png" class="account_add_person" bindtap="bindParter"/>         
@@ -66,7 +66,7 @@
             <view class="keybord-item" bindtap="inputNum" data-num=".">.</view>
             <view class="keybord-item" bindtap="inputNum" data-num="0">0</view>
             <view class="keybord-item" bindtap="clearInput" >清空</view>
-            <view class="keybord-item" bindtap="overInput" style="color: #da4040">完成</view>
+            <view class="keybord-item" bindtap="record" style="color: #da4040">完成</view>
         </view>
     </view>
     
@@ -75,14 +75,15 @@
         show="{{ showParter }}"
         type="bottom"
         overlay="true"
-        bindclose="togglePopup">
+        bindclose="cancelSelectParter">
         <view class="select-parter-layout pop-example__container pop-example__container--bottom">
             <view class="select-parter-header">
-                <text class="select-cancel">取消</text>
-                <text class="select-confirm">确认</text>
-                <text class="select-add">添加</text>
+                <text class="select-cancel" bindtap="cancelSelectParter">取消</text>
+                <text class="select-confirm" bindtap="confirmSelectPater">确认</text>
+                <!-- TODO 邀请 -->
+                <text class="select-add" style="display: none">新增</text>
             </view>
-            <view class="select-item" wx:for="{{parties}}">
+            <view class="select-item" wx:for="{{tempParties}}" bindtap="bindItemParter" data-index="{{index}}">
                 <image src="{{item.avatarUrl}}" class="select-item-avatar"/>
                 <text class="select-item-name">{{item.nickName}}</text>
                 <image src="../../images/icon_selected.png" wx:if="{{item.select}}" class="select-item-select"/>

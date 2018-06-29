@@ -75,6 +75,10 @@ export default class api extends httpUtils {
      * @param {账本id} bookId 
      */
     static getBookParters(bookId) {
-        return this.request(`${baseUrl}/accountbook/parter/${bookId}`)
+        return this.request(`${baseUrl}/accountbook/parter/${bookId}`);
+    }
+
+    static record(param) {
+        return this.request(`${baseUrl}/record`, param, 'POST');
     }
 };
