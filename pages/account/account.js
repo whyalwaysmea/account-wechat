@@ -97,7 +97,7 @@ Page({
     changeMoenyType: function(e) {
         let type = e.currentTarget.dataset.moneytype;
         let classList = type == 1 ? this.data.income : this.data.output;
-    
+        this.data.selectedTag = '';
         this.setData({
             moneyType: type,
             classList: classList,

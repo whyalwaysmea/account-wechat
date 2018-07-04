@@ -2,6 +2,7 @@
 //获取应用实例
 const app = getApp()
 import api from '../../config/api';
+import util from '../../utils/util';
 
 Page({
     data: {
@@ -10,10 +11,12 @@ Page({
         accountInfo: null,
         avatars: [],
         bookId: 0,
+        defaultDate: '',
+        recordList: [],
     },
 
     onLoad: function () {
-        
+        this.data.defaultDate = util.currentMonth();
         if(app.globalData.needAuthorize && this.data.canIUse) {
             // 需要授权按钮
             this.setData({
@@ -28,7 +31,7 @@ Page({
             })
         } else {
             this.data.bookId = wx.getStorageSync('defaultAccountId');
-            this.getAccountBook(this.data.bookId);
+            this.getAccountBook(this.data.bookId, this.data.defaultDate);
         }
         
     },
@@ -54,13 +57,13 @@ Page({
                 app.globalData.needAuthorize = false;
                 app.globalData.defaultAccountId = res.defaultAccount;
                 wx.setStorageSync('defaultAccountId', app.globalData.defaultAccountId);
-                this.getAccountBook(app.globalData.defaultAccountId);
+                this.getAccountBook(app.globalData.defaultAccountId, this.data.defaultDate);
             })
     },
 
 
-    getAccountBook: function(id) {
-        api.getAccountBookDetails(id).then(res => {
+    getAccountBook: function(bookId, page) {
+        api.getAccountBookDetails(bookId).then(res => {
             wx.setNavigationBarTitle({
                 title: res.name
             })
@@ -75,7 +78,10 @@ Page({
         })
 
 
-        api.getRecordList(id, 1).then(res => {
+        api.getRecordList(bookId, page).then(res => {
+            this.setData({
+                recordList: res
+            })
         });
     },
 

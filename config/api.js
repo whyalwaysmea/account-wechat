@@ -41,11 +41,15 @@ export default class api extends httpUtils {
 
     /**
      * 获取记录列表
-     * @param  id 账本id
+     * @param  bookId 账本id
      * @param  page 页码
      */
-    static getRecordList(id, page) {
-        return this.request(`${baseUrl}/record/${id}`, {page, page});
+    static getRecordList(bookId, date) {
+        let param = {
+            "bookId": bookId,
+            "date": date
+        }
+        return this.request(`${baseUrl}/record`, param);
     }
 
 
