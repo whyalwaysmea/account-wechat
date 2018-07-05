@@ -1,0 +1,65 @@
+/* pages/budget/budget.wxss */
+.set-budget-layout {
+    padding-top: 80px;
+    text-align: center;
+    height: 130px;
+    background-color: #ffffff;
+}
+.set-budget {
+    text-align: center;
+}
+
+.save-budget {
+    width: 70%;
+    margin: 0 15%;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #f00;
+    border-radius: 15rpx;
+    text-align: center;
+    color: #f00;
+    display: block;
+    margin-top: 30px;
+}
+
+
+/* 设置过 */
+.bugget-layout {
+    height: 160px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.current-budget {
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;   
+    color: #333;
+    font-size: 28px;
+    display: block; 
+}
+
+.budget-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.total-process {
+    width: 90%;
+    margin: 0 5%;
+    margin-top: 10px;
+}
+
+.end-budget {
+    font-size: 12px;
+    float: left;
+    color: #888888;
+    margin-left: 5%;
+}
+
+.total-budget {
+    float: right;
+    font-size: 12px;
+    color: #888888;
+    margin-right: 5%;
+}

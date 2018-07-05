@@ -86,7 +86,9 @@ Page({
     },
 
     setBudgetary: function() {
-        console.log('设置预算');
+        wx.navigateTo({
+            url: '../../pages/budget/budget?bookId=' + this.data.bookId
+        })
     },
 
     record: function(e) {

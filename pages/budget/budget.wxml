@@ -1,0 +1,26 @@
+<!--pages/budget/budget.wxml-->
+<view class="container">
+
+    <view class="no-budget" wx:if="setBudget">
+        <view class="set-budget-layout">
+            <input placeholder="立即设置预算" auto-focus class="set-budget" type="digit"/>
+        </view>        
+        
+        <button class="save-budget" bindtap="saveBudget">保存</button>
+    </view>
+    
+    <view class="has-budget" wx:else>
+        <view class="bugget-layout">
+            <text class="current-budget">0.00</text>
+            <text class="budget-info">本月剩余预算</text>
+            <progress percent="80" active="true" class="total-process" activeColor="#F00" backgroundColor="#888" stroke-width="30"/>
+            <view style="height: 20px; margin-top: 3px;">
+                <text class="end-budget">0.00</text>
+                <text class="total-budget">998.00</text>
+            </view>
+        </view>
+        
+        
+        <button class="save-budget" bindtap="saveBudget">修改预算</button>
+    </view>
+</view>    

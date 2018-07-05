@@ -1,23 +1,25 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/account/account",
-        "pages/authorize/authorize",
-        "pages/edit_periodic_account/edit_periodic_account",
-        "pages/simple_list/simple_list",
-        "pages/expenditure/expenditure",
-        "pages/periodic_account/periodic_account",
-        "pages/book_setting/book_setting",
-        "pages/edit_name/edit_name",
-        "pages/member_management/member_management",
-        "pages/my/my",
-        "pages/books/books",
-        "pages/statistics/statistics"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#F1F5F6",
-        "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "black"
-    }
+  "pages": [
+      
+    "pages/index/index",
+    "pages/account/account",
+    "pages/authorize/authorize",
+    "pages/edit_periodic_account/edit_periodic_account",
+    "pages/simple_list/simple_list",
+    "pages/expenditure/expenditure",
+    "pages/periodic_account/periodic_account",
+    "pages/book_setting/book_setting",
+    "pages/edit_name/edit_name",
+    "pages/member_management/member_management",
+    "pages/my/my",
+    "pages/books/books",
+    "pages/budget/budget",
+    "pages/statistics/statistics"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F1F5F6",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
 }

@@ -55,14 +55,20 @@
                 </view>                
             </view>
 
-            <view class="rocord-content {{record.remark != ''? 'rocord-content-with-remark' : ''}}"   wx:for="{{item.items}}" wx:for-item="record">
+            <view class="rocord-content {{record.remark != '' || record.avatorUrls.length > 1 ? 'rocord-content-with-remark' : ''}}"   wx:for="{{item.items}}" wx:for-item="record">
                 <view class="record-info" >
-                    <image src="{{record.avatorUrls[0]}}"  class="record-avatars" wx:if="{{accountInfo.multipleType}}"></image>
+                    <image src="{{record.recordAvatorUrl}}"  class="record-avatars" wx:if="{{accountInfo.multipleType}}"></image>
                     <text class="record-title">{{record.mainType}} </text>
                     <text class="record-secondary-title" wx:if="{{record.secondaryType != ''}}">({{record.secondaryType}})</text>
                     <text class="record-money day-input {{record.recordType == 2 ? 'day-output' : ''}} ">{{filters.toFix(record.amount)}}</text>
                 </view>
-                <text wx:if="{{record.remark != ''}}" class="record-remark">{{record.remark}}</text>
+                <view wx:if="{{record.remark != '' || record.avatorUrls.length > 1}}" class="record-remark-layout">
+                    <text >{{record.remark}}</text>
+                    <view  wx:if="{{record.avatorUrls.length > 1}}" class="record-parters">
+                        <text style="margin-right: 8px;">共{{record.avatorUrls.length}}人消费</text>
+                        <image src="{{avatorUrl}}"  class="record-parters-avatars" wx:for="{{record.avatorUrls}}" wx:for-item="avatorUrl"></image>
+                    </view>
+                </view>
             </view>
         </view>
     </scroll-view>
