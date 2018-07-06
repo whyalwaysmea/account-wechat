@@ -40,6 +40,15 @@ export default class api extends httpUtils {
     }
 
     /**
+     * 更新账本
+     * @param {账本id} id 
+     * @param {更新参数} param 
+     */
+    static updateAccountBook(id, param) {
+        return this.request(`${baseUrl}/accountbook/${id}`, param, 'PUT');
+    }
+
+    /**
      * 获取记录列表
      * @param  bookId 账本id
      * @param  page 页码

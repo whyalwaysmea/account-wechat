@@ -1,9 +1,10 @@
-<!--pages/budget/budget.wxml-->
+ <!--pages/budget/budget.wxml-->
+<wxs module="filters" src="../../utils/filters.wxs"></wxs>
 <view class="container">
 
-    <view class="no-budget" wx:if="setBudget">
+    <view class="no-budget" wx:if="{{setBudget}}">
         <view class="set-budget-layout">
-            <input placeholder="立即设置预算" auto-focus class="set-budget" type="digit"/>
+            <input placeholder="立即设置预算" auto-focus class="set-budget" type="digit" bindinput="bindKeyInput" value="{{setAmount}}"/>
         </view>        
         
         <button class="save-budget" bindtap="saveBudget">保存</button>
@@ -11,12 +12,12 @@
     
     <view class="has-budget" wx:else>
         <view class="bugget-layout">
-            <text class="current-budget">0.00</text>
+            <text class="current-budget">{{filters.toFix(currentBudget)}}</text>
             <text class="budget-info">本月剩余预算</text>
-            <progress percent="80" active="true" class="total-process" activeColor="#F00" backgroundColor="#888" stroke-width="30"/>
+            <progress percent="{{percent}}" active="true" class="total-process" activeColor="#F00" backgroundColor="#888" stroke-width="30"/>
             <view style="height: 20px; margin-top: 3px;">
                 <text class="end-budget">0.00</text>
-                <text class="total-budget">998.00</text>
+                <text class="total-budget">{{filters.toFix(totalBudget)}}</text>
             </view>
         </view>
         

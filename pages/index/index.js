@@ -87,7 +87,7 @@ Page({
 
     setBudgetary: function() {
         wx.navigateTo({
-            url: '../../pages/budget/budget?bookId=' + this.data.bookId
+            url: `../../pages/budget/budget?bookId=${this.data.bookId}&totalBudget=${this.data.accountInfo.budgetaryAmount}&surplusBudgetaryAmount=${this.data.accountInfo.surplusBudgetaryAmount}`
         })
     },
 

@@ -23,9 +23,9 @@
             <text class="statistics-title">本月支出</text>
             <text class="statistics-money">{{filters.toFix(accountInfo.expenditureAmount)}}</text>
         </view>
-        <view class="statistics-pannel" wx:if="{{accountInfo.budgetaryAmount != null}}">
+        <view class="statistics-pannel" wx:if="{{accountInfo.budgetaryAmount != null}}" bindtap="setBudgetary">
             <text class="statistics-title">预算剩余</text>
-            <text class="statistics-money">998</text>
+            <text class="statistics-money">{{filters.toFix(accountInfo.surplusBudgetaryAmount)}}</text>
         </view>
         <view class="statistics-pannel" bindtap="setBudgetary" wx:else>
             <text class="statistics-title">没有预算</text>
