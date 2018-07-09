@@ -4,6 +4,7 @@
     display: flex;  
     padding-left: 15px;  
     flex-wrap: wrap;
+    padding-top:15px;
 }
 
 .user_avatar {

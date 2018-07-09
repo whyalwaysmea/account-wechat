@@ -32,6 +32,13 @@ export default class api extends httpUtils {
     }
 
     /**
+     * 获取用户统计数据
+     */
+    static getUserStatistics() {
+        return this.request(`${baseUrl}/user/statistics`,{}, 'GET', false);
+    }
+
+    /**
      * 账本详情
      * @param {*} id 账本id
      */
