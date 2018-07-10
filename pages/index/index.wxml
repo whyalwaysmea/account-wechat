@@ -14,7 +14,7 @@
             </view>
         </navigator>
         
-        <image src="../../images/icon_books.png" class="icon-setting header-icon" ></image>       
+        <image src="../../images/icon_books.png" class="icon-setting header-icon" bindtap="selectBook"></image>       
     </view>
 
     <!-- 简单统计 -->

@@ -55,6 +55,10 @@ export default class api extends httpUtils {
         return this.request(`${baseUrl}/accountbook/${id}`, param, 'PUT');
     }
 
+    static getAllAccountBook(isLoading) {
+        return this.request(`${baseUrl}/accountbook/all`, {}, 'GET', isLoading);
+    }
+
     /**
      * 获取记录列表
      * @param  bookId 账本id

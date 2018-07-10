@@ -1,7 +1,7 @@
 {
-  "pages": [
-      
-    "pages/index/index",
+    "pages": [
+        "pages/index/index",
+        "pages/book_list/book_list",
     "pages/account/account",
     "pages/authorize/authorize",
     "pages/edit_periodic_account/edit_periodic_account",
@@ -12,7 +12,6 @@
     "pages/edit_name/edit_name",
     "pages/member_management/member_management",
     "pages/my/my",
-    "pages/books/books",
     "pages/budget/budget",
     "pages/statistics/statistics"
   ],

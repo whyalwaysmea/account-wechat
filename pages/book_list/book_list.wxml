@@ -1,0 +1,15 @@
+<!--pages/book_list/book_list.wxml-->
+<view class="container">
+    <view class="book_list">
+        <view class="book_item" wx:for="{{allBook}}">
+            <text class="book_name">{{item.name}}</text>
+            <view class="book_info">
+                <text style="display: block">{{item.memberNums}}名成员</text>
+                <text>累计记账{{item.recordNums}}笔</text>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+    </view>
+
+    <button class="btn_new_book" bindtap="record">新增账本</button>
+</view>

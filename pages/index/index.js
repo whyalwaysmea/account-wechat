@@ -15,7 +15,7 @@ Page({
         recordList: [],
     },
 
-    onLoad: function () {
+    onLoad: function (options) {
         this.data.defaultDate = util.currentMonth();
         if(app.globalData.needAuthorize && this.data.canIUse) {
             // 需要授权按钮
@@ -30,8 +30,14 @@ Page({
                 }
             })
         } else {
-            this.data.bookId = wx.getStorageSync('defaultAccountId');
-            this.getAccountBook(this.data.bookId, this.data.defaultDate);
+            let bookId;
+            if(options.bookId) {
+                bookId = options.bookId;
+            } else {
+                bookId = wx.getStorageSync('defaultAccountId');
+            }
+            
+            this.getAccountBook(bookId, this.data.defaultDate);
         }
         
     },
@@ -95,5 +101,25 @@ Page({
         wx.navigateTo({
             url: '../../pages/account/account?bookId=' + this.data.bookId
         })
+    },
+
+    selectBook: function() {
+        api.getAllAccountBook(false)
+        .then(allBook => {
+            let bookNames = allBook.map(item => {
+                return item.name
+            })
+            wx.showActionSheet({
+                itemList: bookNames,
+                success: (res) => {
+                    if (!res.cancel) {
+                        let bookId = allBook[res.tapIndex].bookId;
+                        wx.redirectTo({
+                            url: `/pages/index/index?bookId=${bookId}`
+                        })
+                    }
+                }
+            });
+        })        
     }
 })
