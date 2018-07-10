@@ -1,10 +1,15 @@
 <!--pages/member_management/member_management.wxml-->
+<wxs module="filters" src="../../utils/filters.wxs"></wxs>
 <view class="container"> 
     <view class="member-layout">
-        <view class="member-item" bindtap="memberDetail" bindlongpress="delMember" >
-            <image src="https://avatars1.githubusercontent.com/u/10338837?s=460&v=4"  class="avatars-account"></image>
-            <text class="member-name">Something</text>
-            <text class="member-statistics">本月消费：¥998</text>
+        <view class="member-item" bindtap="memberDetail" bindlongpress="delMember" wx:for="{{memberRecords}}">
+            <image src="{{item.userAvatar}}"  class="avatars-account"></image>
+            <text class="member-name">{{item.userName}}</text>
+            <view class="member-statistics">
+                <text class="member-statistics-expenditure">￥{{filters.toFix(item.totalExpenditureMoney)}}元/{{item.totalExpenditureNums}}笔</text>
+                <text class="member-statistics-income">￥{{filters.toFix(item.totalIncomeMoney)}}元/{{item.totalIncomeNums}}笔</text>
+            </view>    
+            
             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </view>    
     </view>

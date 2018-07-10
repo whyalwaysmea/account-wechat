@@ -20,15 +20,23 @@
 
 .member-name {
     float: left;
-    margin-top: 3px;
+    line-height: 50px;
 }
 
 .member-statistics {
     font-size: 12px;
-    color: #555;
-    position: absolute;
-    top: 28px;
-    left: 50px;
+    float: right;    
+    padding:7px;
+    margin-right:20px;
+}
+
+.member-statistics-expenditure {
+    display: block;
+    color: #da4040;
+}
+
+.member-statistics-income {
+    color: #39ce39;
 }
 
 .weui-cell__ft_in-access {    

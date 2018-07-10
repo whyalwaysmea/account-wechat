@@ -15,7 +15,7 @@
 }
 
 .edit-name {
-    width: 70%;
+    width: 85%;
     margin: 5px;
     height: 36px;
     line-height: 36px;

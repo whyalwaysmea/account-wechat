@@ -1,83 +1,62 @@
 // pages/edit_name/edit_name.js
+import api from '../../config/api';
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        name: 'Something'
+        oldValue: '',
+        value: '',
+        type: 0,            // 1-账本名称
+        bookId: 0,
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-    
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-    
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-    
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-    
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-    
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-    
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-    
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-    
+        this.setData({
+            oldValue: options.value,
+            type: options.type,
+            bookId: options.bookId
+        })
     },
 
     clear: function() {
-        console.log('haha');
-            this.setData({
-            name: ''
+        this.setData({
+            value: ''
         })
     },
 
     save: function() {
-
+        if(this.data.type == 1) {
+            let param = {
+                name: this.data.value
+            }
+            api.updateAccountBook(this.data.bookId, param)
+                .then(res => {
+                    wx.showToast({
+                        title: '修改成功',
+                        icon: 'success',
+                        duration: 500,
+                        success: res => {
+                            var pages = getCurrentPages();
+                            if(pages.length > 1){ 
+                                var prePage = pages[pages.length - 2];
+                                prePage.changeName(this.data.value)
+                            }
+                            wx.navigateBack();
+                        }
+                    })
+                });
+        }
     },
 
     bindKeyInput: function(e) {
         this.setData({
-            name: e.detail.value
+            value: e.detail.value
         })
     },
 })

@@ -23,4 +23,10 @@ Page({
             })
     },
 
+    changeName: function(name) {
+        this.data.bookInfo.name = name
+        this.setData({
+            bookInfo: this.data.bookInfo
+        })
+    }
 })

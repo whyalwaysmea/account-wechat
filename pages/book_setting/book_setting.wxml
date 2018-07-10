@@ -5,8 +5,8 @@
         <image src="{{item.avatarUrl}}" class="user_avatar" wx:for="{{bookInfo.participants}}"></image>
     </view>
 
-    <navigator class="weui-cells weui-cells_after-title" style="margin-top: 15px;">
-        <navigator url="/pages/edit_name/edit_name?bookId={{bookInfo.id}}&type=1" class="weui-cell weui-cell_access" hover-class="weui-cell_active"></navigator>
+    <view class="weui-cells weui-cells_after-title" style="margin-top: 15px;">
+        <navigator url="/pages/edit_name/edit_name?bookId={{bookInfo.id}}&type=1&value={{bookInfo.name}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__bd">账本名字</view>
             <view class="weui-cell__ft weui-cell__ft_in-access">{{bookInfo.name}}</view>
         </navigator>

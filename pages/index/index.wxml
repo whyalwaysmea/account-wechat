@@ -7,14 +7,14 @@
             <image src="../../images/icon_my.png" class="icon-my header-icon"></image>
         </navigator>    
         <image src="../../images/icon_statistics.png" class="icon-statistics header-icon"></image>
-        <image src="../../images/icon_calendar.png" class="icon-statistics header-icon"></image>
+        <image src="../../images/icon_calendar.png" class="icon-statistics header-icon" style="display: none"></image>
         <navigator url="/pages/book_setting/book_setting?bookId={{accountInfo.id}}" >
             <view class="avatars-layout" wx:for="{{avatars}}">
                 <image src="{{item}}"  class="avatars-account {{ index > 0 ? 'avatars-margin' : ''}}" ></image>
             </view>
         </navigator>
         
-        <image src="../../images/icon_calendar.png" class="icon-setting header-icon"></image>       
+        <image src="../../images/icon_books.png" class="icon-setting header-icon" ></image>       
     </view>
 
     <!-- 简单统计 -->

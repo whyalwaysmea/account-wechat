@@ -68,6 +68,13 @@ export default class api extends httpUtils {
         return this.request(`${baseUrl}/record`, param);
     }
 
+    /**
+     * 成员的记账统计
+     * @param {账本id} bookId 
+     */
+    static getMemberRecordStatistics(bookId) {
+        return this.request(`${baseUrl}/record/member/${bookId}`, {});
+    }
 
     /**
      * 获取支出分类列表

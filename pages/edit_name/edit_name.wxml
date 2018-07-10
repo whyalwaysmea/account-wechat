@@ -1,7 +1,7 @@
 <!--pages/edit_name/edit_name.wxml-->
 <view class="container"> 
     <view class="input-layout">
-        <input class="edit-name" placeholder="{{name}}" bindinput="bindKeyInput"  value="{{name}}"/>
+        <input class="edit-name" placeholder="{{oldValue}}" bindinput="bindKeyInput"  value="{{value}}"/>
         <image src="../../images/icon_delete_input.png" class="icon_del" bindtap="clear"/>
     </view>
 
