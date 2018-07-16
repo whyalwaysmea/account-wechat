@@ -13,6 +13,7 @@ Page({
         bookId: 0,
         defaultDate: '',
         recordList: [],
+        isRefresh: false,
     },
 
     onLoad: function (options) {
@@ -40,6 +41,10 @@ Page({
             this.getAccountBook(bookId, this.data.defaultDate);
         }
         
+    },
+
+    onShow: function() {
+
     },
 
     getUserInfo: function (e) {

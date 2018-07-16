@@ -1,7 +1,7 @@
 <!--pages/book_list/book_list.wxml-->
 <view class="container">
     <view class="book_list">
-        <view class="book_item" wx:for="{{allBook}}">
+        <view class="book_item" wx:for="{{allBook}}" bindlongpress="delBook" bindtap="changeBook" data-bookId="{{item.bookId}}">
             <text class="book_name">{{item.name}}</text>
             <view class="book_info">
                 <text style="display: block">{{item.memberNums}}名成员</text>
@@ -11,5 +11,5 @@
         </view>
     </view>
 
-    <button class="btn_new_book" bindtap="record">新增账本</button>
+    <button class="btn_new_book" bindtap="newBook">新增账本</button>
 </view>

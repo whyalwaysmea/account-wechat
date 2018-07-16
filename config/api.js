@@ -31,6 +31,7 @@ export default class api extends httpUtils {
         return this.request(`${baseUrl}/user/updateInfo`, param, 'POST', false);
     }
 
+    
     /**
      * 获取用户统计数据
      */
@@ -44,6 +45,25 @@ export default class api extends httpUtils {
      */
     static getAccountBookDetails(id) {
         return this.request(`${baseUrl}/accountbook/${id}`, {}, 'GET');
+    }
+
+    /**
+     * 删除账本
+     * @param {账本id} id 
+     */
+    static delBook(id) {
+        return this.request(`${baseUrl}/accountbook/${id}`, {}, 'DELETE');
+    }
+
+    /**
+     * 新增账本
+     * @param {账本名称} bookName 
+     */
+    static addAccountBook(bookName) {
+        let param = {
+            'name': bookName
+        }
+        return this.request(`${baseUrl}/accountbook`, param, 'POST');
     }
 
     /**

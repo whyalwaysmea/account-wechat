@@ -215,3 +215,20 @@
     display: block;
 }
 
+.no_record_layout {
+    padding: 20px;
+    text-align: center;
+}
+
+.img_no_record {
+    width:128px;
+    display:block;
+    height:150px;
+    margin:0 auto;
+    margin-top: 20px;
+}
+
+.text_no_record {
+    font-size: 14px;
+    color: #555;
+}

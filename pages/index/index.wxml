@@ -39,7 +39,7 @@
 
 
     <!-- 记录列表 -->
-    <scroll-view class="reocrd-list" scroll-y>
+    <scroll-view class="reocrd-list" scroll-y  wx:if="{{recordList.length > 0}}">
         <view class="record-item" wx:for="{{recordList}}">
             <view class="day-record">
                 <text class="day-date">{{item.date}} {{item.week}}</text>    
@@ -71,8 +71,13 @@
                 </view>
             </view>
         </view>
+        
     </scroll-view>
-
+    <view wx:else class="no_record_layout">
+        <image src="../../images/img_no_record.png" class="img_no_record"></image>
+        <text class="text_no_record">暂无记录</text>
+    </view>
+    
 
     <!-- 记一笔 -->
     <button class="btn_record" bindtap="record">记一笔</button>
