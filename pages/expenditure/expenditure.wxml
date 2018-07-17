@@ -1,35 +1,23 @@
 <!--pages/expenditure/expenditure.wxml-->
 <view class="container">
     <view class="main-layout">
-        <view class="item">
-            <image src="../../images/output/icon_clothes_unselected.png" class="main-icon"></image>
-            <text>吃</text>
+        <view class="item {{index == selectedIndex ? 'item-selected' : ''}}" wx:for="{{list}}" bindtap="changeChild" data-index="{{index}}">
+            <image src="{{item.iconUrl}}" class="main-icon"></image>
+            <text>{{item.name}}</text>
         </view>
-        <view class="item">
-            <image src="../../images/output/icon_clothes_unselected.png" class="main-icon"></image>
-            <text>吃</text>
-        </view>
-        <view class="item">
-            <image src="../../images/output/icon_clothes_unselected.png" class="main-icon"></image>
-            <text>吃</text>
-        </view>
-        <view class="item">
-            <image src="../../images/output/icon_clothes_unselected.png" class="main-icon"></image>
-            <text>吃</text>
-        </view>
-        <view class="item">
+        <view class="item" style="display: none;">
             <image src="../../images/icon_add_person.png" class="main-icon"></image>
         </view>
     </view>
 
     <view class="secondary-layout">        
-        <view class="secondary-item">
-            <text >乐</text>
+        <view class="secondary-item" wx:for="{{childList}}">
+            <text >{{item.name}}</text>
             <view class="weui-cell__ft_in-access"></view>
         </view>
 
         
-        <view class="secondary-item"> 
+        <view class="secondary-item" style="display: none;"> 
             <image src="../../images/icon_add_person.png" class="main-icon"></image>
         </view>
         

@@ -5,7 +5,7 @@
     "pages/account/account",
     "pages/authorize/authorize",
     "pages/edit_periodic_account/edit_periodic_account",
-    "pages/simple_list/simple_list",
+    "pages/income/income",
     "pages/expenditure/expenditure",
     "pages/periodic_account/periodic_account",
     "pages/book_setting/book_setting",

@@ -1,0 +1,11 @@
+<!--pages/simple_list/simple_list.wxml-->
+<view class="container">
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell"  wx:for="{{list}}">
+            <view class="weui-cell__hd">
+                <image src="{{item.iconUrl}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">{{item.name}}</view>
+        </view>
+    </view>
+</view>    

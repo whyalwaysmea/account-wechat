@@ -17,13 +17,21 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        if(options.type == 2) {
+        let title = '';
+        if(options.type == 1) {
+            title = '修改账本名称';
+        } else if(options.type == 2) {
             options.value = '请输入账本名字';
+            title = '新建账本';
         }
         this.setData({
             oldValue: options.value,
             type: options.type,
             bookId: options.bookId
+        })
+
+        wx.setNavigationBarTitle({
+            title: title
         })
     },
 

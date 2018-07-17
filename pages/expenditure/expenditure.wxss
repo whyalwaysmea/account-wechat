@@ -24,6 +24,10 @@
     position: relative;
 }
 
+.item-selected {
+    background-color: #ddd;
+}
+
 .secondary-item {
     font-size: 14px;
     padding-left: 10px;
